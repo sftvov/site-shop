@@ -1,0 +1,162 @@
+@use 'sass:math';
+.footer {
+	color: var(--notWhite);
+	width: 100%;
+	@include common-value('margin-top', 100);
+	background-color: var(--dark);
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+	}
+
+	&__inner-container {
+		width: 100%;
+		@include common-value('padding-left', 76);
+		@include common-value('padding-right', 33);
+	}
+
+	&__main-content {
+		display: flex;
+		@include common-value('column-gap', 80);
+		@include common-value('padding-top', 59);
+	}
+
+	&__left-group {
+	}
+
+	&__columns-wrapper {
+		display: flex;
+		@include common-value('column-gap', 80);
+	}
+
+	&__column {
+	}
+
+	&__category-title {
+		$fs: 28.5;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 62;
+		line-height: math.div($lh, $fs);
+		font-weight: 700;
+	}
+
+	&__column-list {
+	}
+
+	&__column-item {
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 39;
+		line-height: math.div($lh, $fs);
+		font-weight: 500;
+		white-space: nowrap;
+		&--address {
+			white-space: normal;
+		}
+	}
+
+	&__column-link {
+	}
+
+	&__social-wrapper {
+		display: flex;
+		@include common-value('column-gap', 10);
+		@include common-value('margin-top', 77);
+	}
+
+	&__social-link {
+		$fs: 37;
+		font-size: math.div($fs, $fz) + em;
+		line-height: 1;
+	}
+
+	&__right-group {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__download-wrapper {
+		display: flex;
+		@include common-value('column-gap', 21);
+	}
+
+	&__downlod-app {
+		position: relative;
+		display: flex;
+		align-items: center;
+		@include common-value('padding-top', 9);
+		@include common-value('padding-right', 11);
+		@include common-value('padding-bottom', 7.5);
+		@include common-value('padding-left', 49);
+		& img {
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	&__app-text-wrapper {
+		display: flex;
+		flex-direction: column;
+		@include common-value('row-gap', 1);
+	}
+
+	&__app-text-title {
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 22;
+		line-height: math.div($lh, $fs);
+		font-weight: 400;
+	}
+
+	&__app-text-sup {
+		$fs: 10;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 12;
+		line-height: math.div($lh, $fs);
+		font-weight: 400;
+		@include common-value('margin-left', 2);
+	}
+
+	&__categories-spoiler {
+		width: 100%;
+		@include common-value('margin-top', 44);
+		border-top: 1px solid var(--border);
+		border-bottom: 1px solid var(--border);
+		@include common-value('padding-top', 9);
+		@include common-value('padding-bottom', 11);
+	}
+
+	&__spoiler-title-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__spoiler-title {
+	}
+
+	&__spoiler-chevron {
+		$fs: 37;
+		font-size: math.div($fs, $fz) + em;
+		line-height: 1;
+		transform: rotate(180deg);
+	}
+
+	&__copyright-wrapper {
+		@include common-value('padding-top', 37);
+		@include common-value('padding-bottom', 59);
+	}
+
+	&__copyright-text {
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 36;
+		line-height: math.div($lh, $fs);
+		font-weight: 700;
+	}
+}

@@ -1,0 +1,170 @@
+[class*='_icon-']:before,
+[class*='_icon-'] .path1:before,
+[class*='_icon-'] .path2:before,
+[class*='_icon-'] .path3:before,
+[class*='_icon-'] .path4:before {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icons' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	vertical-align: top;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class*='_icon-'] {
+	line-height: 1;
+}
+
+._icon-eye-fill:before {
+	content: '\e900';
+}
+._icon-my-orders:before {
+	content: '\e901';
+}
+._icon-sign-out:before {
+	content: '\e902';
+}
+._icon-eye:before {
+	content: '\e903';
+}
+._icon-search:before {
+	content: '\e904';
+}
+._icon-delete:before {
+	content: '\e905';
+}
+._icon-message:before {
+	content: '\e906';
+}
+._icon-filtter:before {
+	content: '\e907';
+}
+._icon-freeShippingReturns:before {
+	content: '\e908';
+}
+._icon-sizeFit:before {
+	content: '\e909';
+}
+._icon-truck:before {
+	content: '\e90a';
+}
+._icon-creditCard:before {
+	content: '\e90b';
+}
+._icon-polygon:before {
+	content: '\e90c';
+}
+._icon-shoppingart:before {
+	content: '\e90d';
+}
+._icon-user:before {
+	content: '\e90e';
+}
+._icon-heart:before {
+	content: '\e90f';
+}
+._icon-playButton:before {
+	content: '\e910';
+}
+._icon-chevron:before {
+	content: '\e911';
+}
+._icon-arrow:before {
+	content: '\e912';
+}
+._icon-lock-3 .path1:before {
+	content: '\e913';
+	color: rgb(60, 66, 66);
+}
+._icon-lock-3 .path2:before {
+	content: '\e914';
+	margin-left: -1em;
+	color: rgb(255, 255, 255);
+}
+._icon-starBorder:before {
+	content: '\e915';
+	color: #edd146;
+}
+._icon-star:before {
+	content: '\e916';
+	color: #edd146;
+}
+._icon-google .path1:before {
+	content: '\e917';
+	color: rgb(66, 133, 244);
+}
+._icon-google .path2:before {
+	content: '\e918';
+	margin-left: -1em;
+	color: rgb(52, 168, 83);
+}
+._icon-google .path3:before {
+	content: '\e919';
+	margin-left: -1em;
+	color: rgb(251, 188, 5);
+}
+._icon-google .path4:before {
+	content: '\e91a';
+	margin-left: -1em;
+	color: rgb(235, 67, 53);
+}
+._icon-twitt:before {
+	content: '\e91b';
+	color: #47acdf;
+}
+._icon-in .path1:before {
+	content: '\e91c';
+	color: rgb(246, 246, 246);
+}
+._icon-in .path2:before {
+	content: '\e91d';
+	margin-left: -1em;
+	color: rgb(42, 47, 47);
+}
+._icon-in .path3:before {
+	content: '\e91e';
+	margin-left: -1em;
+	color: rgb(42, 47, 47);
+}
+._icon-twitter .path1:before {
+	content: '\e91f';
+	color: rgb(246, 246, 246);
+}
+._icon-twitter .path2:before {
+	content: '\e920';
+	margin-left: -1em;
+	color: rgb(42, 47, 47);
+}
+._icon-instagram .path1:before {
+	content: '\e921';
+	color: rgb(246, 246, 246);
+}
+._icon-instagram .path2:before {
+	content: '\e922';
+	margin-left: -1em;
+	color: rgb(42, 47, 47);
+}
+._icon-facebook .path1:before {
+	content: '\e923';
+	color: rgb(246, 246, 246);
+}
+._icon-facebook .path2:before {
+	content: '\e924';
+	margin-left: -1em;
+	color: rgb(42, 47, 47);
+}
+._icon-see:before {
+	content: '\e925';
+	color: #807d7e;
+}
+._icon-hide:before {
+	content: '\e926';
+	color: #807d7e;
+}

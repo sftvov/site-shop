@@ -1,0 +1,26 @@
+header.header
+	.header__container._container
+		.header__body
+			a.header__logo-link(href='#page')
+				+justImg('/img/logo', 'svg', 'logo', 'кликните чтобы перейти на самый верх страницы')
+			nav.header__menu-wrapper
+				ul.header__menu-list
+					li.header__menu-item
+						a.header__menu-link(href='/') Shop
+					li.header__menu-item
+						a.header__menu-link(href='/') Men
+					li.header__menu-item
+						a.header__menu-link.header__menu-link--active(href='/') Women
+					li.header__menu-item
+						a.header__menu-link(href='/') Combos
+					li.header__menu-item
+						a.header__menu-link(href='/') Joggers
+			.header__search-wrapper._icon-search
+				input.header__search-input(type="search" placeholder="Search")
+			.header__icons-wrapper
+				button.header__icon.header__icon--search._icon-search
+				button.header__icon._icon-heart 
+				button.header__icon._icon-user
+				button.header__icon._icon-shoppingart
+			.header__burger
+				span

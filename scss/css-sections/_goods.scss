@@ -1,0 +1,155 @@
+@use 'sass:math';
+.goods {
+	flex-grow: 1;
+	&__top {
+		$fs: 22;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 26;
+		line-height: math.div($lh, $fs);
+		display: flex;
+		justify-content: space-between;
+		@include common-value('margin-top', 50);
+		@include common-value('margin-bottom', 50);
+	}
+
+	&__title {
+	}
+
+	&__filtration {
+		display: flex;
+		@include common-value('column-gap', 25);
+	}
+
+	&__filter {
+		transition-duration: var(--transition);
+		&--active {
+			cursor: auto;
+		}
+		&--active,
+		&:hover,
+		&:focus-visible {
+			color: var(--main);
+		}
+		&:focus-visible {
+			box-shadow: var(--main) 0 3px 0 -1px;
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
+		justify-content: space-between;
+		@include common-value('row-gap', 50);
+		@include common-value('column-gap', 24.5);
+		@media (max-width: $md5+px) {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	&__card {
+		position: relative;
+		&:has(.goods__card-title > a:hover),
+		&:has(.goods__card-title > a:focus-visible) {
+			& .goods__card-image {
+				& img {
+					transition-delay: 0s;
+					transform: scale(1.1);
+				}
+			}
+		}
+		&:has(.goods__card-title > a:focus-visible) {
+			& .goods__card-image {
+				box-shadow: var(--gray) 0 0 15px -6px;
+			}
+		}
+	}
+
+	&__card-image {
+		transition-duration: var(--transition);
+		overflow: hidden;
+		position: relative;
+		aspect-ratio: 282/370;
+		@include common-value('border-radius', 12);
+		& img {
+			transition-duration: var(--transition);
+			transition-delay: 0.3s;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__icon-favorite {
+		z-index: 1;
+		cursor: pointer;
+		transition-duration: var(--transition);
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		position: absolute;
+		@include common-value('top', 27);
+		@include common-value('right', 21);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include common-value('width', 32.4);
+		@include common-value('height', 32.4);
+		background-color: var(--notWhite);
+		border-radius: 50%;
+		&:hover,
+		&:focus-visible {
+			color: var(--notWhite);
+			background-color: var(--main);
+		}
+	}
+
+	&__card-bottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include common-value('margin-top', 30);
+	}
+
+	&__card-text {
+	}
+
+	&__card-title {
+		$lh: 19;
+		line-height: math.div($lh, $fz);
+		@include common-value('margin-bottom', 5);
+		& > a {
+			&:hover,
+			&:focus-visible {
+				color: var(--hover);
+			}
+			&::before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+
+	&__card-brand {
+		color: var(--TextGray);
+		$fs: 14;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 17;
+		line-height: math.div($lh, $fs);
+		font-weight: 500;
+	}
+
+	&__card-price {
+		$fs: 14;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 17;
+		line-height: math.div($lh, $fs);
+		font-weight: 700;
+		@include common-value('padding-top', 10);
+		@include common-value('padding-right', 20);
+		@include common-value('padding-bottom', 10);
+		@include common-value('padding-left', 20);
+	}
+}

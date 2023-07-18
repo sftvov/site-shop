@@ -1,0 +1,130 @@
+@use 'sass:math';
+.category {
+	&__container {
+	}
+
+	&__catalog {
+		display: flex;
+		align-items: flex-start;
+		@include common-value('column-gap', 50);
+	}
+
+	&__description {
+		@include common-value('margin-top', 100);
+		@include common-value('padding-left', 21);
+		& h2 {
+			position: relative;
+			font-family: 'CoreSansC';
+			$fs: 28;
+			font-size: math.div($fs, $fz) + em;
+			$lh: 33.5;
+			line-height: math.div($lh, $fs);
+			letter-spacing: 0.56px;
+			@include common-value('margin-top', 100);
+			@include common-value('margin-bottom', 30);
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				@include common-value('left', -21);
+				translate: 0 -50%;
+				@include common-value('width', 6);
+				@include common-value('height', 28);
+				background-color: var(--main);
+			}
+		}
+		h3 {
+			color: var(--TextGray);
+			font-family: 'CoreSansC';
+			$fs: 20;
+			font-size: math.div($fs, $fz) + em;
+			$lh: 33.5;
+			line-height: math.div($lh, $fs);
+			letter-spacing: 0.4px;
+			@include common-value('margin-bottom', 25);
+		}
+
+		p {
+			color: var(--TextGray);
+			$fs: 20;
+			font-size: math.div($fs, $fz) + em;
+			$lh: 33.5;
+			line-height: math.div($lh, $fs);
+			font-weight: 400;
+			letter-spacing: 0.4px;
+			@include common-value('margin-bottom', 20);
+		}
+
+		table {
+			width: 100%;
+			background-color: var(--notWhite);
+			@include common-value('margin-top', 50);
+			@include common-value('border-radius', 12);
+			border-collapse: collapse;
+		}
+
+		td,
+		th {
+			letter-spacing: 0.48px;
+			@include common-value('padding-right', 42);
+			&:first-child {
+				@include common-value('padding-left', 84);
+			}
+			&:not(:first-child) {
+				text-align: center;
+				@include common-value('padding-left', 40);
+				border-left: 1px solid var(--border);
+			}
+		}
+
+		tr {
+			&:nth-child(2) td {
+				@include common-value('padding-top', 50);
+			}
+			&:not(:nth-child(2)) td {
+				@include common-value('padding-top', 26);
+			}
+			&:last-child td {
+				@include common-value('padding-bottom', 50);
+			}
+			&:not(:last-child) td {
+				@include common-value('padding-bottom', 26);
+			}
+		}
+
+		td {
+			$fs: 24;
+			font-size: math.div($fs, $fz) + em;
+			$lh: 16;
+			line-height: math.div($lh, $fs);
+			color: var(--TextGray);
+			font-weight: 400;
+			@include common-value('padding-bottom', 26);
+		}
+	}
+
+	th {
+		$fs: 24;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 33.5;
+		line-height: math.div($lh, $fs);
+		@include common-value('padding-top', 50);
+		@include common-value('padding-bottom', 50);
+		border-bottom: 1px solid var(--border);
+		&:first-child {
+			text-align: left;
+		}
+	}
+
+	&__see-more-link {
+		color: var(--TextGray);
+		font-family: 'CoreSansC';
+		$fs: 20;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 33.5;
+		line-height: math.div($lh, $fs);
+		letter-spacing: 0.4px;
+		@include common-value('margin-bottom', 25);
+	}
+}

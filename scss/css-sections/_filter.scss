@@ -1,0 +1,233 @@
+@use 'sass:math';
+.filter {
+	color: var(--TextGray);
+	@include common-value('width', 295);
+	border-right: 1px solid var(--border);
+	border-left: 1px solid var(--border);
+	@media (max-width: $md3+px) {
+		position: absolute;
+		left: -100%;
+		top: 0;
+	}
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		@include common-value('padding-top', 20);
+		@include common-value('padding-right', 30);
+		@include common-value('padding-bottom', 20);
+		@include common-value('padding-left', 30);
+		border-bottom: 1px solid var(--border);
+		&:not(:first-child) {
+			&:focus-visible,
+			&:hover {
+				color: var(--TextDark);
+			}
+			&:focus-visible {
+				& .filter__name {
+					letter-spacing: 0.1em;
+				}
+			}
+		}
+		&._active {
+			& .filter__icon {
+				transform: rotateX(0deg);
+			}
+		}
+	}
+
+	&__name {
+		transition: var(--transition);
+		$fs: 22;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 26;
+		line-height: math.div($lh, $fs);
+		letter-spacing: 0.44px;
+	}
+
+	&__icon {
+		transition-duration: 0.3s;
+		$fs: 22;
+		font-size: math.div($fs, $fz) + em;
+		transform: rotateX(180deg);
+	}
+
+	&__body {
+		@include common-value('padding-top', 40);
+		@include common-value('padding-right', 24);
+		@include common-value('padding-bottom', 40);
+		@include common-value('padding-left', 32);
+		border-bottom: 1px solid var(--border);
+	}
+
+	&__categories-wrapper {
+		display: flex;
+		flex-direction: column;
+		@include common-value('row-gap', 18);
+	}
+
+	&__category-link {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&:hover,
+		&:focus-visible {
+			color: var(--TextDark);
+		}
+		&:focus-visible {
+			& .filter__category-name {
+				letter-spacing: 0.1em;
+			}
+		}
+	}
+
+	&__category-name {
+		transition-duration: var(--transition);
+		$lh: 19;
+		line-height: math.div($lh, $fz);
+	}
+
+	&__category-icon {
+		$fs: 19;
+		font-size: math.div($fs, $fz) + em;
+		transform: rotate(90deg);
+	}
+
+	&__prices-wrapper {
+		@include common-value('padding-left', 2);
+		@include common-value('padding-right', 12);
+	}
+
+	&__price-line {
+		position: relative;
+		width: 100%;
+		height: 15px;
+		@include common-value('margin-bottom', 26);
+		background: linear-gradient(90deg, var(--border) var(--start-price), var(--main) var(--start-price) var(--end-price), var(--border) 0) 0 50% / 100% 3px no-repeat;
+	}
+
+	&__price-round {
+		transition: background-color var(--transition) linear, box-shadow var(--transition) linear;
+		position: absolute;
+		top: 50%;
+		translate: -50% -50%;
+		width: 16px;
+		height: 16px;
+		background-color: var(--main);
+		border-radius: 50%;
+		&:focus {
+			z-index: 1;
+			box-shadow: var(--notWhite) 0 0 0 3px;
+			background-color: var(--hover);
+		}
+
+		&--one {
+			left: var(--start-price);
+			translate: -100% -50%;
+		}
+		&--two {
+			left: var(--end-price);
+			translate: 0 -50%;
+		}
+	}
+
+	&__price-inputs-wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__price-input {
+		transition-duration: var(--transition);
+		$lh: 19;
+		line-height: math.div($lh, $fz);
+		text-align: center;
+		@include common-value('width', 97);
+		@include common-value('height', 32);
+		border: 1px solid var(--border);
+		@include common-value('border-radius', 8);
+		&:focus {
+			color: var(--TextDark);
+			border-color: var(--dark);
+		}
+	}
+
+	&__colors-wrapper {
+		display: grid;
+		grid-template-columns: repeat(4, 15.975%);
+		@include common-value('column-gap', 20);
+		@include common-value('row-gap', 18);
+		@include common-value('padding-left', 7);
+	}
+
+	&__color-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&:hover,
+		&:focus-visible {
+			& .filter__color-square {
+				box-shadow: var(--dark) 0 0 7px -2px;
+			}
+			&._active {
+				& .filter__color-square {
+					box-shadow: var(--dark) 0 0 0 3px inset, var(--dark) 0 0 7px -2px;
+				}
+			}
+		}
+		&._active {
+			& .filter__color-square {
+				box-shadow: var(--dark) 0 0 0 3px inset;
+			}
+		}
+	}
+
+	&__color-square {
+		width: 100%;
+		aspect-ratio: 1;
+		@include common-value('border-radius', 8);
+		border: 1px solid var(--border);
+	}
+
+	&__color-sign {
+		$fs: 14;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 17;
+		line-height: math.div($lh, $fs);
+		text-transform: capitalize;
+		@include common-value('margin-top', 18);
+	}
+
+	&__sizes-wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 26.07%);
+		@include common-value('column-gap', 20);
+		@include common-value('row-gap', 18);
+		@include common-value('padding-left', 3);
+	}
+
+	&__size {
+		transition-duration: var(--transition);
+		color: var(--TextColor);
+		$fs: 14;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 17;
+		line-height: math.div($lh, $fs);
+		font-weight: 600;
+		text-align: center;
+		text-transform: uppercase;
+		@include common-value('border-radius', 8);
+		border: 1px solid var(--border);
+		@include common-value('padding-top', 9);
+		@include common-value('padding-bottom', 6);
+		&:hover,
+		&:focus-visible,
+		&._active {
+			color: var(--notWhite);
+			background-color: var(--dark);
+		}
+		&._active {
+			box-shadow: var(--notWhite) 0 0 0 1px inset;
+		}
+	}
+}

@@ -1,0 +1,9 @@
+include ../../../src/_mixins.pug
+mixin imgLash(path, ext, alt, title)
+	+img(path, ext, alt, title, 800, 400, 300, 200)
+
+mixin imgServ(path, ext, alt, title)
+	+img(path, ext, alt, title, 800, 600, 400, 200)
+
+mixin imgClient(path, ext, alt, title)
+	+img(path, ext, alt, title, 400, 200)

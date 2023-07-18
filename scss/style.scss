@@ -1,0 +1,31 @@
+@import 'scss-tools';
+@import 'css-settings/variables-css';
+@import 'css-settings/fonts';
+@import '../../../src/css-libs/null';
+
+.wrapper {
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	max-width: $maxWidth + px;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+
+.page {
+	width: 100%;
+	flex: 1 1 auto;
+}
+
+@import 'css-settings/icons';
+@import 'css-settings/customize';
+@import 'css-settings/functions';
+@import 'css-settings/elements';
+
+@import 'css-sections/header';
+@import 'css-sections/footer';

@@ -1,0 +1,11 @@
+include html/_mixins.pug
+doctype html
+html(lang="ru")
+	+head('Euphoria - Ecommerce Website Template', 'description','category')
+	body
+		.wrapper
+			include html/_header.pug
+			main#page.page
+				include html/catalog/_category.pug
+			include html/_footer.pug
+		+js('category')

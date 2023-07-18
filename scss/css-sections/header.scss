@@ -1,0 +1,164 @@
+@use 'sass:math';
+.header {
+	width: 100%;
+	@media (min-width: $md3+px) {
+		border-bottom: 1px solid #bebcbd;
+	}
+	&__container {
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		@include common-value('column-gap', 12);
+		@include common-value('padding-top', 31);
+		@include common-value('padding-bottom', 32);
+		@media (max-width: $md3+px) {
+			row-gap: 10px;
+		}
+	}
+
+	&__logo-link {
+		@include common-value('height', 45);
+		& > img {
+			height: 100%;
+		}
+	}
+
+	&__menu-wrapper {
+		flex-grow: 1;
+		display: flex;
+		justify-content: flex-end;
+		@media (min-width: $md3+px) {
+			margin-top: 4px;
+			margin-right: 63px;
+		}
+		@media (max-width: $md3+px) {
+			order: 2;
+			flex-basis: 100%;
+			padding-top: 20px;
+			border-top: 1px solid var(--border);
+		}
+	}
+
+	&__menu-list {
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		@include common-value('column-gap', 40);
+		@media (max-width: $md3+px) {
+			flex-grow: 1;
+		}
+	}
+
+	&__menu-item {
+	}
+
+	&__menu-link {
+		transition-duration: var(--transition);
+		$fs: 22;
+		font-size: math.div($fs, $fz) + em;
+		&--active {
+			font-weight: 700;
+		}
+		&:not(.header__menu-link--active) {
+			color: var(--TextGray);
+		}
+		&:hover,
+		&:focus-visible {
+			color: var(--TextDark);
+		}
+		&:focus-visible {
+			box-shadow: #ffffff 0 6px 0 -1px, var(--dark) 0 8px 0 -1px;
+		}
+	}
+
+	&__search-wrapper {
+		display: flex;
+		align-items: center;
+		@include common-value('column-gap', 12);
+		@include common-value('min-width', 267);
+		@include common-value('padding-top', 12);
+		@include common-value('padding-right', 20);
+		@include common-value('padding-bottom', 12);
+		@include common-value('padding-left', 20);
+		@include common-value('border-radius', 8);
+		background-color: var(--notWhite);
+		@media (min-width: $md3+px) {
+			margin-right: 63px;
+		}
+		@media (min-width: $md5+px) {
+			margin-left: auto;
+		}
+		@media (max-width: $md5+px) {
+			order: 1;
+			flex-basis: 100%;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			&:not(._active) {
+				opacity: 0;
+				visibility: hidden;
+				height: 0;
+				padding: 0;
+				margin: 0;
+			}
+		}
+		&:hover,
+		&:has(.header__search-input:focus) {
+			&::before {
+				color: var(--TextDark);
+			}
+		}
+		&::before {
+			color: var(--TextGray);
+			$fs: 20;
+			font-size: math.div($fs, $fz) + em;
+			line-height: 1;
+		}
+	}
+
+	&__search-input {
+		$lh: 20;
+		line-height: math.div($lh, $fz);
+		transform: translateY(2px);
+		display: flex;
+		&::placeholder {
+			color: var(--TextGray);
+		}
+	}
+
+	&__icons-wrapper {
+		display: flex;
+		align-items: center;
+		@include common-value('column-gap', 12);
+	}
+
+	&__icon {
+		cursor: pointer;
+		transition-duration: var(--transition);
+		$fs: 20;
+		font-size: math.div($fs, $fz) + em;
+		line-height: 1;
+		@include common-value('padding', 12);
+		@include common-value('border-radius', 8);
+		background-color: var(--notWhite);
+
+		&._active,
+		&:hover,
+		&:focus-visible {
+			color: var(--notWhite);
+			background-color: var(--dark);
+		}
+		&--search {
+			@media (min-width: $md5+px) {
+				display: none;
+			}
+		}
+	}
+
+	&__burger {
+		display: none;
+	}
+}

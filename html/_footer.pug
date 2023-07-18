@@ -1,0 +1,73 @@
+-
+	let columns = [
+		{	
+			title: 'Need Help',
+			items: ['Contact Us','Track Order','Returns & Refunds',"FAQ's",'Career'],
+		},
+		{	
+			title: 'Company',
+			items: ['About Us','euphoria Blog','euphoriastan','Collaboration','Media'],
+		},
+		{	
+			title: 'More Info',
+			items: ['Term and Conditions','Privacy Policy','Shipping Policy','Sitemap'],
+		},
+	];
+
+footer.footer
+	.footer__container._container
+		h2.footer__title._hidden-title Important Information
+		.footer__inner-container
+			.footer__main-content
+				.footer__left-group
+					.footer__columns-wrapper
+						each column in columns
+							article.footer__column
+								h3.footer__category-title #{column.title}
+								ul.footer__column-list
+									each item in column.items
+										li.footer__column-item
+											a.footer__column-link(href="/") #{item}
+					.footer__social-wrapper
+						a.footer__social-link._icon-facebook(href="/")
+							span.path1
+							span.path2
+						a.footer__social-link._icon-instagram(href="/")
+							span.path1
+							span.path2
+						a.footer__social-link._icon-twitter(href="/")
+							span.path1
+							span.path2
+						a.footer__social-link._icon-in(href="/")
+							span.path1
+							span.path2
+							span.path3
+				.footer__right-group
+					article.footer__column
+						h3.footer__category-title Location
+						ul.footer__column-list
+							li.footer__column-item
+								a.footer__column-link(href="mailto:support@euphoria.in") support@euphoria.in
+							li.footer__column-item.footer__column-item--address Eklingpura Chouraha, Ahmedabad Main Road #[nobr (NH 8- Near Mahadev Hotel)] Udaipur, India- 313002
+					article.footer__column 
+						h3.footer__category-title Download The App
+						.footer__download-wrapper
+							a.footer__downlod-app
+								img(src="img/footer/playMarket.png", alt="")
+								.footer__app-text-wrapper
+									span.footer__app-text-sup android app on
+									span.footer__app-text-title Google Play
+							a.footer__downlod-app
+								img(src="img/footer/appStore.png", alt="")
+								.footer__app-text-wrapper
+									span.footer__app-text-sup Available on the
+									span.footer__app-text-title App Store
+		section.footer__categories-spoiler
+			.footer__inner-container
+				.footer__spoiler-title-wrapper
+					h3.footer__category-title Popular Categories
+					.footer__spoiler-chevron._icon-chevron
+		.footer__copyright-wrapper
+			span.footer__copyright-text Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.
+
+

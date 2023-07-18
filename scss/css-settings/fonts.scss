@@ -1,0 +1,15 @@
+@font-face {
+	font-family: 'icons';
+	font-display: swap;
+	src: url('../fonts/icons.woff') format('woff'), url('../fonts/icons.woff2') format('woff2');
+	font-weight: 400;
+}
+
+@include font('Mintaka', 400, '');
+@include font('Causten', 400, '');
+@include font('Causten', 500, '');
+@include font('Causten', 600, '');
+@include font('Causten', 700, '');
+@include font('CoreSansC', 400, '');
+@include font('CoreSansC', 500, '');
+@include font('CoreSansC', 700, '');

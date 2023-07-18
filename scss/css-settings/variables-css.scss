@@ -1,0 +1,37 @@
+:root {
+	--md1: #{$md1};
+	--md2: #{$md2};
+	--md3: #{$md3};
+	--md4: #{$md4};
+
+	--transition: 0.3s;
+
+	--main: #8a33fd;
+	--hover: #6620c1;
+	--border: #bebcbd;
+	--dark: #3c4242;
+	--gray: #807d7e;
+
+	--TextDark: var(--dark);
+	--TextGray: var(--gray);
+	--TextLight: #bebcbd;
+
+	--TextColor: var(--TextDark);
+
+	--lightShadow: #edeef2;
+
+	--notWhite: #f6f6f6;
+
+	--purple: #8434e1;
+	--navy: #345eff;
+	--yellow: #fdc761;
+	--black: #252525;
+	--white: #ffffff;
+	--grey: #e4e5e8;
+	--red: #f35528;
+	--broom: #d67e3b;
+	--pink: #e08d9d;
+	--orange: #f16f2b;
+	--green: #48bc4e;
+	--blue: #3fdeff;
+}
