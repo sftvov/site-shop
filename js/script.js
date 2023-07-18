@@ -48,7 +48,7 @@ function spaceForHeader() {
 @@include('../../../src/functions/webp.js');
 @@include('../../../src/functions/slide.js');
 @@include('../../../src/functions/activator.js');
-// @@include('../../../src/functions/body_lock.js');
+@@include('../../../src/functions/body_lock.js');
 // include('functions/dynamic_adapt.js');
 // include('../../../src/js-elements/burger.js');
 // include('elements/search.js');
@@ -69,10 +69,11 @@ activator('.header__icon--search',{
 	effectDuration: 300
 });
 
-
+activator('.filter-button',{ 
+	removed: ['.filter'], 
+	bodyLock: true
+});
 activator('.filter__color-item', {});
-
-
 activator('.filter__size', {});
 
 window.onload = () => {

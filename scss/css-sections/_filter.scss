@@ -1,13 +1,22 @@
 @use 'sass:math';
 .filter {
+	transition: left var(--transition) ease-in;
 	color: var(--TextGray);
-	@include common-value('width', 295);
+	width: 295px;
+	background-color: #ffffff;
 	border-right: 1px solid var(--border);
 	border-left: 1px solid var(--border);
 	@media (max-width: $md3+px) {
-		position: absolute;
-		left: -100%;
+		z-index: 2;
+		position: fixed;
 		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100vh;
+		overflow-y: scroll;
+		&._active {
+			left: 0;
+		}
 	}
 	&__head {
 		display: flex;
@@ -142,10 +151,13 @@
 		$lh: 19;
 		line-height: math.div($lh, $fz);
 		text-align: center;
-		@include common-value('width', 97);
+		width: 97px;
 		@include common-value('height', 32);
 		border: 1px solid var(--border);
 		@include common-value('border-radius', 8);
+		@media (max-width: $md3+px) {
+			width: 45%;
+		}
 		&:focus {
 			color: var(--TextDark);
 			border-color: var(--dark);
@@ -154,7 +166,7 @@
 
 	&__colors-wrapper {
 		display: grid;
-		grid-template-columns: repeat(4, 15.975%);
+		grid-template-columns: repeat(auto-fill, 36.73px);
 		@include common-value('column-gap', 20);
 		@include common-value('row-gap', 18);
 		@include common-value('padding-left', 7);
@@ -167,22 +179,23 @@
 		&:hover,
 		&:focus-visible {
 			& .filter__color-square {
-				box-shadow: var(--dark) 0 0 7px -2px;
+				box-shadow: var(--notWhite) 0 0 0 2px inset;
 			}
 			&._active {
 				& .filter__color-square {
-					box-shadow: var(--dark) 0 0 0 3px inset, var(--dark) 0 0 7px -2px;
+					box-shadow: var(--dark) 0 0 0 2px inset;
 				}
 			}
 		}
 		&._active {
 			& .filter__color-square {
-				box-shadow: var(--dark) 0 0 0 3px inset;
+				box-shadow: var(--dark) 0 0 0 2px inset, var(--notWhite) 0 0 0 4px inset;
 			}
 		}
 	}
 
 	&__color-square {
+		transition-duration: var(--transition);
 		width: 100%;
 		aspect-ratio: 1;
 		@include common-value('border-radius', 8);
@@ -200,7 +213,7 @@
 
 	&__sizes-wrapper {
 		display: grid;
-		grid-template-columns: repeat(3, 26.07%);
+		grid-template-columns: repeat(auto-fill, 61px);
 		@include common-value('column-gap', 20);
 		@include common-value('row-gap', 18);
 		@include common-value('padding-left', 3);
@@ -226,8 +239,38 @@
 			color: var(--notWhite);
 			background-color: var(--dark);
 		}
-		&._active {
-			box-shadow: var(--notWhite) 0 0 0 1px inset;
+		&:hover,
+		&:focus-visible {
+			&._active {
+				box-shadow: var(--notWhite) 0 0 0 1px inset;
+			}
+		}
+	}
+}
+
+.filter-button {
+	z-index: 2;
+	cursor: pointer;
+	$fs: 20;
+	font-size: math.div($fs, $fz) + em;
+	line-height: 1;
+	position: fixed;
+	bottom: 100px;
+	right: 20px;
+	@include common-value('padding', 12);
+	@include common-value('border-radius', 8);
+	background-color: var(--notWhite);
+	@media (min-width: $md3+px) {
+		display: none;
+	}
+	&._active,
+	&:focus-visible {
+		color: var(--notWhite);
+		background-color: var(--dark);
+	}
+	&--search {
+		@media (min-width: $md5+px) {
+			display: none;
 		}
 	}
 }
