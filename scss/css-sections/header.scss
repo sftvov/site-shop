@@ -66,8 +66,13 @@
 		&:not(.header__menu-link--active) {
 			color: var(--TextGray);
 		}
-		&:hover,
-		&:focus-visible {
+		@media (hover: hover) {
+			&:hover {
+				color: var(--TextDark);
+			}
+		}
+		&:focus-visible,
+		&:active {
 			color: var(--TextDark);
 		}
 		&:focus-visible {
@@ -105,7 +110,13 @@
 				margin: 0;
 			}
 		}
-		&:hover,
+		@media (hover: hover) {
+			&:hover {
+				&::before {
+					color: var(--TextDark);
+				}
+			}
+		}
 		&:has(.header__search-input:focus) {
 			&::before {
 				color: var(--TextDark);
@@ -144,9 +155,14 @@
 		@include common-value('padding', 12);
 		@include common-value('border-radius', 8);
 		background-color: var(--notWhite);
-
+		@media (hover: hover) {
+			&:hover {
+				color: var(--notWhite);
+				background-color: var(--dark);
+			}
+		}
 		&._active,
-		&:hover,
+		&:active,
 		&:focus-visible {
 			color: var(--notWhite);
 			background-color: var(--dark);

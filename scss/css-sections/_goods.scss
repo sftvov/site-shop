@@ -25,8 +25,12 @@
 		&--active {
 			cursor: auto;
 		}
-		&--active,
-		&:hover,
+		@media (hover: hover) {
+			&:hover {
+				color: var(--main);
+			}
+		}
+		&._active,
 		&:focus-visible {
 			color: var(--main);
 		}
@@ -48,19 +52,32 @@
 
 	&__card {
 		position: relative;
-		&:has(.goods__card-title > a:hover),
-		&:has(.goods__card-title > a:focus-visible),
-		&:has(.goods__icon-favorite :hover),
-		&:has(.goods__icon-favorite :focus-visible) {
-			& .goods__card-image {
-				& img {
-					transform: scale(1.1);
+		@media (hover: hover) {
+			&:has(.goods__card-title > a:hover) {
+				& .goods__card-image {
+					& > img {
+						transform: scale(1.1);
+					}
+				}
+			}
+			&:has(.goods__icon-favorite:hover) {
+				& .goods__card-image {
+					& > img {
+						transform: scale(1.1);
+					}
+				}
+				& .goods__card-title {
+					& > a {
+						color: var(--hover);
+					}
 				}
 			}
 		}
 		&:has(.goods__card-title > a:focus-visible) {
 			& .goods__card-image {
-				box-shadow: var(--main) 0 0 15px -6px;
+				& > img {
+					transform: scale(1.1);
+				}
 			}
 		}
 	}
@@ -71,7 +88,7 @@
 		position: relative;
 		aspect-ratio: 282/370;
 		@include common-value('border-radius', 12);
-		& img {
+		& > img {
 			transition-duration: var(--transition);
 			width: 100%;
 			height: 100%;
@@ -95,7 +112,13 @@
 		@include common-value('height', 32.4);
 		background-color: var(--notWhite);
 		border-radius: 50%;
-		&:hover,
+		@media (hover: hover) {
+			&:hover {
+				color: var(--notWhite);
+				background-color: var(--main);
+			}
+		}
+		&._active,
 		&:focus-visible {
 			color: var(--notWhite);
 			background-color: var(--main);
@@ -117,7 +140,12 @@
 		line-height: math.div($lh, $fz);
 		@include common-value('margin-bottom', 5);
 		& > a {
-			&:hover,
+			@media (hover: hover) {
+				&:hover {
+					color: var(--hover);
+				}
+			}
+			&:active,
 			&:focus-visible {
 				color: var(--hover);
 			}
