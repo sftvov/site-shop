@@ -2,7 +2,7 @@
 .header {
 	width: 100%;
 	@media (min-width: $md3+px) {
-		border-bottom: 1px solid #bebcbd;
+		border-bottom: 1px solid var(--border);
 	}
 	&__container {
 	}

@@ -47,42 +47,8 @@ b {
 			background-color: var(--bright);
 		}
 	}
-	// &--white {
-	// 	color: var(--colorTextDark);
-	// 	background-color: #ffffff;
-	// 	border: 1px solid var(--borderGray);
-	// 	box-shadow: 0 0 2px var(--TextDark);
-	// 	&::before {
-	// 		color: var(--colorTextGray);
-	// 	}
-	// }
 	&:disabled {
 		cursor: not-allowed;
 		opacity: 0.5;
 	}
 }
-
-// ._underline {
-// 	position: relative;
-// 	&::before {
-// 		content: '';
-// 		pointer-events: none;
-// 		position: absolute;
-// 		bottom: -2px;
-// 		width: calc(100% + 4px);
-// 		height: 1px;
-// 		background-color: var(--TextDark);
-// 		transition: all 0.3s ease-out;
-// 	}
-// }
-
-// ._background {
-// 	position: absolute;
-// 	top: calc(-100vw / 1904 * 276);
-// 	right: -38.55%;
-// 	max-width: 1444px;
-// 	width: calc(100vw / 1904 * 1444);
-// 	@media (min-width: $maxWidth+px) {
-// 		top: -276px;
-// 	}
-// }

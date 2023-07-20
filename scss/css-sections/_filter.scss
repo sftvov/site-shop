@@ -2,13 +2,7 @@
 .filter {
 	transition: left var(--transition) ease-in;
 	color: var(--TextGray);
-	@media (min-width: $md1+px) {
-		width: 368.75px;
-	}
-	@media (min-width: $md2+px) {
-		width: 331.875;
-	}
-	width: 295px;
+	width: var(--filter);
 	background-color: #ffffff;
 	border-right: 1px solid var(--border);
 	border-left: 1px solid var(--border);

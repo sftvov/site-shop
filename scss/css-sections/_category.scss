@@ -1,5 +1,6 @@
 @use 'sass:math';
 .category {
+	@include common-value('--filter', 295);
 	&__container {
 	}
 

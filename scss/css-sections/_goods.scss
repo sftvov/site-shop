@@ -1,6 +1,9 @@
 @use 'sass:math';
 .goods {
 	flex-grow: 1;
+	@media (max-width: $md3+px) {
+		width: 100%;
+	}
 	&__top {
 		$fs: 22;
 		font-size: math.div($fs, $fz) + em;
@@ -22,7 +25,7 @@
 
 	&__filter {
 		transition-duration: var(--transition);
-		&--active {
+		&._active {
 			cursor: auto;
 		}
 		@media (hover: hover) {
@@ -44,9 +47,9 @@
 		grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
 		justify-content: space-between;
 		@include common-value('row-gap', 50);
-		@include common-value('column-gap', 24.5);
+		column-gap: 2.739%;
 		@media (max-width: $md5+px) {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: repeat(2, 48.6305%);
 		}
 	}
 
@@ -102,14 +105,20 @@
 		transition-duration: var(--transition);
 		$fs: 18;
 		font-size: math.div($fs, $fz) + em;
+		@media (max-width: $md3+px) {
+			font-size: 18px;
+		}
+		@media (max-width: $md5+px) {
+			font-size: 2.6vw;
+		}
 		position: absolute;
 		@include common-value('top', 27);
 		@include common-value('right', 21);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		@include common-value('width', 32.4);
-		@include common-value('height', 32.4);
+		width: 11.5%;
+		aspect-ratio: 1;
 		background-color: var(--notWhite);
 		border-radius: 50%;
 		@media (hover: hover) {
@@ -133,9 +142,13 @@
 	}
 
 	&__card-text {
+		white-space: nowrap;
+		overflow: hidden;
 	}
 
 	&__card-title {
+		overflow: hidden;
+		text-overflow: ellipsis;
 		$lh: 19;
 		line-height: math.div($lh, $fz);
 		@include common-value('margin-bottom', 5);
@@ -161,6 +174,8 @@
 	}
 
 	&__card-brand {
+		overflow: hidden;
+		text-overflow: ellipsis;
 		color: var(--TextGray);
 		$fs: 14;
 		font-size: math.div($fs, $fz) + em;

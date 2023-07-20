@@ -4,9 +4,10 @@ $fz: 16;
 $maxWidth: 2560;
 $minWidth: 280;
 
-$minContainer: $minWidth - 20;
-
+$mobileSpace: 40;
 $mdSpace: 79.95;
+
+$minContainer: $minWidth - $mobileSpace;
 
 /* Container variant 1 */
 
@@ -34,7 +35,7 @@ $md1: $maxContainer + $mdSpace;
 $md2: $desctopContainer + $mdSpace;
 $md3: $laptopContainer + $mdSpace;
 $md4: $padContainer + $mdSpace;
-$md5: $mobileContainer + $mdSpace;
+$md5: $mobileContainer + $mobileSpace - 0.05;
 
 /* --- */
 
