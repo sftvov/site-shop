@@ -269,6 +269,7 @@
 	@include common-value('padding', 12);
 	@include common-value('border-radius', 8);
 	background-color: var(--notWhite);
+	border: 1px solid var(--border);
 	@media (min-width: $md3+px) {
 		display: none;
 	}
@@ -285,10 +286,5 @@
 	}
 	&:focus-visible._active {
 		box-shadow: var(--dark) 0 0 0 1px inset, var(--notWhite) 0 0 0 2px inset;
-	}
-	&--search {
-		@media (min-width: $md5+px) {
-			display: none;
-		}
 	}
 }

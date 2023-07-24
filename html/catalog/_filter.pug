@@ -5,48 +5,49 @@
   const styles = ['Classic', 'Casual', 'Business', 'Sport', 'Elegant', 'Formal (evening)']
 
 .filter(data-spollers)
-  .filter__head
-    span.filter__name Filter
-    .filter__icon._icon-filtter
-  nav.filter__body 
-    .filter__categories-wrapper
-      each category in categories
-        a(href='/').filter__category-link
-          .filter__category-name #{category}
-          .filter__category-icon._icon-chevron
-  button.filter__head._active(data-spoller)
-    span.filter__name Price
-    .filter__icon._icon-chevron
-  .filter__body 
-    .filter__prices-wrapper(data-price=50)
-      .filter__price-line(style='--start-price: 0; --end-price: 100%;')
-        button.filter__price-round.filter__price-round--one
-        button.filter__price-round.filter__price-round--two
-      .filter__price-inputs-wrapper
-        input.filter__price-input._one(type="text" value="$0" patern="\\w{2,}")
-        input.filter__price-input._two(type="text" value="$50") 
-  button.filter__head._active(data-spoller)
-    span.filter__name Colors
-    .filter__icon._icon-chevron
-  .filter__body 
-    .filter__colors-wrapper
-      each color in colors 
-        button.filter__color-item
-          .filter__color-square(style='background-color: var(--' + color + ')')
-          .filter__color-sign #{color}
-  button.filter__head._active(data-spoller)
-    span.filter__name Size
-    .filter__icon._icon-chevron
-  .filter__body 
-    .filter__sizes-wrapper
-      each size in sizes
-        button.filter__size #{size}
-  button.filter__head._active(data-spoller)
-    span.filter__name Dress Style
-    .filter__icon._icon-chevron
-  .filter__body 
-    .filter__categories-wrapper
-      each category in styles
-        a(href="").filter__category-link
-          .filter__category-name #{category}
-          .filter__category-icon._icon-chevron
+  .filter__container._container
+    .filter__head
+      span.filter__name Filter
+      .filter__icon._icon-filtter
+    nav.filter__body 
+      .filter__categories-wrapper
+        each category in categories
+          a(href='/').filter__category-link
+            .filter__category-name #{category}
+            .filter__category-icon._icon-chevron
+    button.filter__head._active(data-spoller)
+      span.filter__name Price
+      .filter__icon._icon-chevron
+    .filter__body 
+      .filter__prices-wrapper(data-price=50)
+        .filter__price-line(style='--start-price: 0; --end-price: 100%;')
+          button.filter__price-round.filter__price-round--one
+          button.filter__price-round.filter__price-round--two
+        .filter__price-inputs-wrapper
+          input.filter__price-input._one(type="text" value="$0" patern="\\w{2,}")
+          input.filter__price-input._two(type="text" value="$50") 
+    button.filter__head._active(data-spoller)
+      span.filter__name Colors
+      .filter__icon._icon-chevron
+    .filter__body 
+      .filter__colors-wrapper
+        each color in colors 
+          button.filter__color-item
+            .filter__color-square(style='background-color: var(--' + color + ')')
+            .filter__color-sign #{color}
+    button.filter__head._active(data-spoller)
+      span.filter__name Size
+      .filter__icon._icon-chevron
+    .filter__body 
+      .filter__sizes-wrapper
+        each size in sizes
+          button.filter__size #{size}
+    button.filter__head._active(data-spoller)
+      span.filter__name Dress Style
+      .filter__icon._icon-chevron
+    .filter__body 
+      .filter__categories-wrapper
+        each category in styles
+          a(href="").filter__category-link
+            .filter__category-name #{category}
+            .filter__category-icon._icon-chevron

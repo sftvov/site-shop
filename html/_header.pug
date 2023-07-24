@@ -2,7 +2,7 @@ header.header
 	.header__container._container
 		.header__body
 			a.header__logo-link(href='#page')
-				+justImg('/img/logo', 'svg', 'logo', 'кликните чтобы перейти на самый верх страницы')
+				+justImg('/img/logo', 'svg', 'header__logo-link-img', 'logo', 'кликните чтобы перейти на самый верх страницы')
 			nav.header__menu-wrapper
 				ul.header__menu-list
 					li.header__menu-item
@@ -15,12 +15,10 @@ header.header
 						a.header__menu-link(href='/') Combos
 					li.header__menu-item
 						a.header__menu-link(href='/') Joggers
-			.header__search-wrapper._icon-search
-				input.header__search-input(type="search" placeholder="Search")
+			search.header__search-wrapper._icon-search
+				input.header__search-input(type="search" aria-label="Поиск по сайту" placeholder="Search")
 			.header__icons-wrapper
-				button.header__icon.header__icon--search._icon-search
-				button.header__icon._icon-heart 
-				button.header__icon._icon-user
-				button.header__icon.header__icon--basket._icon-shoppingart
-			.header__burger
-				span
+				button.header__icon.header__icon--search._icon-search(aria-label="Открыть поиск")
+				button.header__icon._icon-heart(aria-label="Избранное")
+				button.header__icon._icon-user(aria-label="Личный кабинет")
+				button.header__icon.header__icon--basket._icon-shoppingart(aria-label="Корзина")

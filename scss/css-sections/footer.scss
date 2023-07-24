@@ -5,9 +5,6 @@
 	@include common-value('margin-top', 100);
 	background-color: var(--dark);
 	&__container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 	}
 
 	&__title {
@@ -20,28 +17,67 @@
 	}
 
 	&__main-content {
-		display: flex;
-		@include common-value('column-gap', 80);
+		@include common-value('--row-gap', 40);
+		@include common-value('--column-gap', 80);
+		display: grid;
+		grid-template: auto auto / auto auto;
+		column-gap: var(--column-gap);
 		@include common-value('padding-top', 59);
-	}
-
-	&__left-group {
+		@media (max-width: $md3+px) {
+			row-gap: var(--row-gap);
+		}
 	}
 
 	&__columns-wrapper {
 		display: flex;
-		@include common-value('column-gap', 80);
+		row-gap: var(--row-gap);
+		@media (min-width: $md3+px) {
+			column-gap: var(--column-gap);
+		}
+		@media (max-width: $md3+px) {
+			grid-column: span 2;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		@media (max-width: $md5+px) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	&__column {
+		&--in-wrapper {
+			width: 32%;
+			@media (max-width: $md5+px) {
+				width: auto;
+			}
+		}
+		&--location {
+			@media (max-width: $md3+px) {
+				grid-column: span 2;
+			}
+		}
+		&--app {
+			@media (max-width: $md5+px) {
+				grid-column: span 2;
+			}
+		}
+
+		@media (max-width: $md3+px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
 	}
 
 	&__category-title {
-		$fs: 28.5;
+		$fs: 28.6;
 		font-size: math.div($fs, $fz) + em;
 		$lh: 62;
 		line-height: math.div($lh, $fs);
 		font-weight: 700;
+		@include common-value('margin-bottom', 10);
 	}
 
 	&__column-list {
@@ -50,12 +86,11 @@
 	&__column-item {
 		$fs: 18;
 		font-size: math.div($fs, $fz) + em;
-		$lh: 39;
+		$lh: 44;
 		line-height: math.div($lh, $fs);
 		font-weight: 500;
-		white-space: nowrap;
 		&--address {
-			white-space: normal;
+			text-wrap: balance;
 		}
 	}
 
@@ -64,8 +99,16 @@
 
 	&__social-wrapper {
 		display: flex;
+		align-self: flex-end;
 		@include common-value('column-gap', 10);
-		@include common-value('margin-top', 77);
+		@include common-value('margin-top', 12.5);
+		@media (max-width: $md3+px) {
+			order: 1;
+		}
+		@media (max-width: $md5+px) {
+			grid-column: span 2;
+			justify-self: center;
+		}
 	}
 
 	&__social-link {
@@ -74,15 +117,14 @@
 		line-height: 1;
 	}
 
-	&__right-group {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-	}
-
 	&__download-wrapper {
 		display: flex;
+		flex-wrap: wrap;
+		@include common-value('row-gap', 21);
 		@include common-value('column-gap', 21);
+		@media (max-width: $md3+px) {
+			justify-content: center;
+		}
 	}
 
 	&__downlod-app {
@@ -93,9 +135,16 @@
 		@include common-value('padding-right', 11);
 		@include common-value('padding-bottom', 7.5);
 		@include common-value('padding-left', 49);
-		& img {
-			position: absolute;
-			left: 0;
+	}
+
+	&__downlod-app-img {
+		position: absolute;
+		left: 0;
+		&--google {
+			width: 21.4%;
+		}
+		&--apple {
+			width: 15.88%;
 		}
 	}
 
@@ -150,6 +199,7 @@
 	&__copyright-wrapper {
 		@include common-value('padding-top', 37);
 		@include common-value('padding-bottom', 59);
+		text-align: center;
 	}
 
 	&__copyright-text {

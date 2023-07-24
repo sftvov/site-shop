@@ -22,9 +22,10 @@
 
 	&__logo-link {
 		@include common-value('height', 45);
-		& > img {
-			height: 100%;
-		}
+	}
+
+	&__logo-link-img {
+		height: 100%;
 	}
 
 	&__menu-wrapper {
@@ -172,9 +173,5 @@
 				display: none;
 			}
 		}
-	}
-
-	&__burger {
-		display: none;
 	}
 }

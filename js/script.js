@@ -66,16 +66,27 @@ function spaceForHeader() {
 activator('.header__icon--search',{ 
 	removed: ['.header__search-wrapper'], 
 	effects: ['U'],
-	effectDuration: 300
+	effectDuration: 300,
+	// bodyLock: true,
+	// removing: ['.header__search-wrapper'],
+	// deactivate: false,
+	// onlyOne: true,
+	// clickOutClose: true
 });
 
 activator('.filter-button',{ 
 	removed: ['.filter'], 
 	bodyLock: true
 });
+
 activator('.filter__color-item', {});
 activator('.filter__size', {});
 activator('.goods__icon-favorite', {});
+
+activator('.goods__filter', {
+	deactivate: false,
+	onlyOne: true,
+});
 
 window.onload = () => {
 	addTouchClassForMobile();

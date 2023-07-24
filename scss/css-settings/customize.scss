@@ -13,13 +13,13 @@ b {
 	font-weight: 700;
 }
 
-._h1 {
-	$fs: 36;
-	font-size: math.div($fs, $fz) + em;
-	$lh: 45;
-	line-height: math.div($lh, $fs);
-	font-weight: 600;
-}
+// ._h1 {
+// 	$fs: 36;
+// 	font-size: math.div($fs, $fz) + em;
+// 	$lh: 45;
+// 	line-height: math.div($lh, $fs);
+// 	font-weight: 600;
+// }
 
 ._button {
 	transition: all 0.15s ease;
