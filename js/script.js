@@ -68,20 +68,24 @@ activator('.header__icon--search',{
 	effects: ['U'],
 	effectDuration: 300,
 	// bodyLock: true,
-	// removing: ['.header__search-wrapper'],
+	removing: ['.goods__filter'],
 	// deactivate: false,
 	// onlyOne: true,
-	// clickOutClose: true
+	clickOutClose: true,
+	escClose: true,
 });
 
 activator('.filter-button',{ 
 	removed: ['.filter'], 
-	bodyLock: true
+	bodyLock: true,
+	escClose: true,
 });
 
 activator('.filter__color-item', {});
 activator('.filter__size', {});
-activator('.goods__icon-favorite', {});
+activator('.goods__icon-favorite', {
+	clickOutClose: true
+});
 
 activator('.goods__filter', {
 	deactivate: false,

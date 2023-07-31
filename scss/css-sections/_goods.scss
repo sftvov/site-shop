@@ -123,14 +123,15 @@
 		border-radius: 50%;
 		@media (hover: hover) {
 			&:hover {
-				color: var(--notWhite);
-				background-color: var(--main);
+				box-shadow: var(--notWhite) 0 0 0 2px, var(--main) 0 0 0 4px;
 			}
 		}
-		&._active,
-		&:focus-visible {
+		&._active {
 			color: var(--notWhite);
 			background-color: var(--main);
+		}
+		&:focus-visible {
+			box-shadow: var(--notWhite) 0 0 0 2px, var(--main) 0 0 0 4px;
 		}
 	}
 

@@ -275,16 +275,14 @@
 	}
 	@media (hover: hover) {
 		&:hover {
-			color: var(--notWhite);
-			background-color: var(--dark);
+			box-shadow: var(--dark) 0 0 0 1px inset, var(--notWhite) 0 0 0 2px inset;
 		}
 	}
-	&._active,
 	&:focus-visible {
+		box-shadow: var(--dark) 0 0 0 1px inset, var(--notWhite) 0 0 0 2px inset;
+	}
+	&._active {
 		color: var(--notWhite);
 		background-color: var(--dark);
-	}
-	&:focus-visible._active {
-		box-shadow: var(--dark) 0 0 0 1px inset, var(--notWhite) 0 0 0 2px inset;
 	}
 }
