@@ -47,10 +47,6 @@
 
 	&__column {
 		&--in-wrapper {
-			width: 32%;
-			@media (max-width: $md5+px) {
-				width: auto;
-			}
 		}
 		&--location {
 			@media (max-width: $md3+px) {
@@ -95,6 +91,16 @@
 	}
 
 	&__column-link {
+		transition-duration: var(--transition);
+		@media (hover: hover) {
+			&:hover {
+				color: var(--main);
+			}
+		}
+		&:active,
+		&:focus-visible {
+			box-shadow: var(--dark) 0 5px 0 0, var(--notWhite) 0 7px 0 -1px;
+		}
 	}
 
 	&__social-wrapper {
@@ -112,9 +118,21 @@
 	}
 
 	&__social-link {
+		transition-duration: var(--transition);
 		$fs: 37;
 		font-size: math.div($fs, $fz) + em;
 		line-height: 1;
+		@media (hover: hover) {
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		&:focus-visible {
+			transform: scale(1.2);
+		}
+		&:active {
+			transform: scale(0.9);
+		}
 	}
 
 	&__download-wrapper {
@@ -128,6 +146,7 @@
 	}
 
 	&__downlod-app {
+		transition-duration: var(--transition);
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -135,6 +154,17 @@
 		@include common-value('padding-right', 11);
 		@include common-value('padding-bottom', 7.5);
 		@include common-value('padding-left', 49);
+		@media (hover: hover) {
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+		&:focus-visible {
+			transform: scale(1.1);
+		}
+		&:active {
+			transform: scale(0.9);
+		}
 	}
 
 	&__downlod-app-img {

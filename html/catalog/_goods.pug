@@ -187,7 +187,7 @@
       if (goods[n].sex === 'w')
         article.goods__card
           .goods__card-image
-            button.goods__icon-favorite._icon-heart
+            button.goods__icon-favorite._icon-heart(aria-label='add ' + goods[n].name + ' to favorite')
             img(src=goods[n].img alt=goods[n].name)
           .goods__card-bottom
             .goods__card-text

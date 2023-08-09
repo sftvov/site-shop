@@ -1,30 +1,44 @@
-let body = document.querySelector('body');
-let wrapper = document.querySelector('.wrapper');
-let page = document.querySelector('.page');
-let header = document.querySelector('.header');
+const body = document.querySelector('body');
+const wrapper = document.querySelector('.wrapper');
+const page = document.querySelector('.page');
+const header = document.querySelector('.header');
+
 // ----------------------------------------------------------------------
 
-let headerHeight;
+const md1 = getComputedStyle(document.documentElement)
+.getPropertyValue('--md1');
+const md2 = getComputedStyle(document.documentElement)
+.getPropertyValue('--md2');
+const md3 = getComputedStyle(document.documentElement)
+.getPropertyValue('--md3');
+const md4 = getComputedStyle(document.documentElement)
+.getPropertyValue('--md4');
+const md5 = getComputedStyle(document.documentElement)
+.getPropertyValue('--md5');
 
-function hh() {
-	headerHeight = header.offsetHeight;
-};
+// ----------------------------------------------------------------------
 
-function spaceForHeader() {
-	hh();
-	let pElements = document.querySelectorAll('._padding-header');
-	if(pElements) {
-		for(el of pElements) {
-			el.style.paddingTop = headerHeight + 'px';
-		}
-	}
-	let mElements = document.querySelectorAll('._margin-header');
-	if(mElements) {
-		for(el of mElements) {
-			el.style.marginTop = headerHeight + 'px';
-		}
-	}
-}
+// let headerHeight;
+
+// function hh() {
+// 	headerHeight = header.offsetHeight;
+// };
+
+// function spaceForHeader() {
+// 	hh();
+// 	let pElements = document.querySelectorAll('._padding-header');
+// 	if(pElements) {
+// 		for(el of pElements) {
+// 			el.style.paddingTop = headerHeight + 'px';
+// 		}
+// 	}
+// 	let mElements = document.querySelectorAll('._margin-header');
+// 	if(mElements) {
+// 		for(el of mElements) {
+// 			el.style.marginTop = headerHeight + 'px';
+// 		}
+// 	}
+// }
 
 
 // function spaceForMobileMenu() {
@@ -50,12 +64,11 @@ function spaceForHeader() {
 @@include('../../../src/functions/activator.js');
 @@include('../../../src/functions/body_lock.js');
 // include('functions/dynamic_adapt.js');
-// include('../../../src/js-elements/burger.js');
 // include('elements/search.js');
 // include('elements/tabs.js');
 // include('elements/popups.js');
 // include('elements/gallery.js');
-// include('elements/sliders.js');
+@@include('../../../src/libs/swiper.min.js');
 // include('elements/scroll.js');
 @@include('elements/spollers.js');
 
@@ -92,6 +105,67 @@ activator('.goods__filter', {
 	onlyOne: true,
 });
 
+
+
+let headerCategoriesSlider = new Swiper('.header__menu-wrapper', {
+	// direction: 'vertical',
+	observer: true,
+	observeParents: true,
+	slidesPerView: 'auto',
+	// slidesOffsetAfter: 60,
+	// slidesOffsetBefore: 60,
+	// watchOverflow: true,
+	// centerInsufficientSlides: true,
+	// spaceBetween: 30,
+	// autoHeight: true,
+	grabCursor: true,
+	simulateTouch: true,
+	// touchStartForcePreventDefault: true,
+	// touchStartPreventDefault: false,
+	// uniqueNavElements: false,
+	// touchRatio: 2,
+	speed: 800,
+	// pagination: {
+	// 	el: '.swiper-pagination',
+	// 	type: 'bullets',
+	// 	clickable: true,
+	// },
+	// initialSlide: 2,
+	// effect: 'fade',
+	// Arrows
+	// navigation: {
+	// 	nextEl: '.swiper-button-next',
+	// 	prevEl: '.swiper-button-prev',
+	// },
+	// mousewheel: true,
+	// scrollbar: {
+	//   el: '.swiper-scrollbar',
+	//   draggable: true,
+	// },
+	// controller: {
+	// 	control: mini_slider,
+	// },
+	// autoplay: {
+	// 	delay: 3000,
+	// 	disableOnInteraction: true,
+	// },
+	// loop: true,
+	//preloadImages: false,
+	// lazy: true,
+	breakpoints: {
+		[md3]: {
+			enabled: false,
+		},
+	},
+	// on: {
+	// 	lazyImageReady: function () {
+	// 		ibg();
+	// 	},
+	// }
+});
+
 window.onload = () => {
 	addTouchClassForMobile();
 }
+
+

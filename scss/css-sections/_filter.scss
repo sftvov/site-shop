@@ -2,10 +2,13 @@
 .filter {
 	transition: left var(--transition) ease-in;
 	color: var(--TextGray);
-	width: var(--filter);
+	@include common-value('--filter', 295);
 	background-color: #ffffff;
 	border-right: 1px solid var(--border);
 	border-left: 1px solid var(--border);
+	@media (min-width: $md3+px) {
+		width: var(--filter);
+	}
 	@media (max-width: $md3+px) {
 		z-index: 2;
 		position: fixed;

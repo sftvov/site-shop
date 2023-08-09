@@ -3,18 +3,18 @@ header.header
 		.header__body
 			a.header__logo-link(href='#page')
 				+justImg('/img/logo', 'svg', 'header__logo-link-img', 'logo', 'кликните чтобы перейти на самый верх страницы')
-			nav.header__menu-wrapper
-				ul.header__menu-list
-					li.header__menu-item
+			nav.header__menu-wrapper.swiper
+				ul.header__menu-list.swiper-wrapper
+					li.header__menu-item.swiper-slide
 						a.header__menu-link(href='/') Shop
-					li.header__menu-item
+					li.header__menu-item.swiper-slide
 						a.header__menu-link(href='/') Men
-					li.header__menu-item
+					li.header__menu-item.swiper-slide
 						a.header__menu-link.header__menu-link--active(href='/') Women
-					li.header__menu-item
+					li.header__menu-item.swiper-slide
 						a.header__menu-link(href='/') Combos
-					li.header__menu-item
-						a.header__menu-link(href='/') Joggers
+					li.header__menu-item.swiper-slide
+						a.header__menu-link(href='/') Joggers					
 			search.header__search-wrapper._icon-search
 				input.header__search-input(type="search" aria-label="Поиск по сайту" placeholder="Search")
 			.header__icons-wrapper

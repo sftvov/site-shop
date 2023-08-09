@@ -11,6 +11,8 @@
 		line-height: math.div($lh, $fs);
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
+		@include common-value('row-gap', 20);
 		@include common-value('margin-top', 50);
 		@include common-value('margin-bottom', 50);
 	}

@@ -13,19 +13,19 @@
       .filter__categories-wrapper
         each category in categories
           a(href='/').filter__category-link
-            .filter__category-name #{category}
-            .filter__category-icon._icon-chevron
+            span.filter__category-name #{category}
+            span.filter__category-icon._icon-chevron
     button.filter__head._active(data-spoller)
       span.filter__name Price
       .filter__icon._icon-chevron
     .filter__body 
       .filter__prices-wrapper(data-price=50)
         .filter__price-line(style='--start-price: 0; --end-price: 100%;')
-          button.filter__price-round.filter__price-round--one
-          button.filter__price-round.filter__price-round--two
+          button.filter__price-round.filter__price-round--one(aria-label='left price slider')
+          button.filter__price-round.filter__price-round--two(aria-label='right price slider')
         .filter__price-inputs-wrapper
-          input.filter__price-input._one(type="text" value="$0" patern="\\w{2,}")
-          input.filter__price-input._two(type="text" value="$50") 
+          input.filter__price-input._one(type="text" value="$0" aria-label='min price')
+          input.filter__price-input._two(type="text" value="$50" aria-label='max price') 
     button.filter__head._active(data-spoller)
       span.filter__name Colors
       .filter__icon._icon-chevron
@@ -34,7 +34,7 @@
         each color in colors 
           button.filter__color-item
             .filter__color-square(style='background-color: var(--' + color + ')')
-            .filter__color-sign #{color}
+            span.filter__color-sign #{color}
     button.filter__head._active(data-spoller)
       span.filter__name Size
       .filter__icon._icon-chevron

@@ -1,6 +1,5 @@
 @use 'sass:math';
 .category {
-	@include common-value('--filter', 295);
 	&__container {
 	}
 
@@ -18,16 +17,15 @@
 	@include common-value('margin-top', 100);
 	@include common-value('padding-left', 21);
 	&__h2 {
-		position: relative;
 		font-family: 'CoreSansC';
 		$fs: 28;
 		font-size: math.div($fs, $fz) + em;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.56px;
+		position: relative;
 		@include common-value('margin-top', 100);
 		@include common-value('margin-bottom', 30);
-
 		&::before {
 			content: '';
 			position: absolute;
@@ -96,9 +94,6 @@
 		padding-top: var(--bigPadding);
 		padding-bottom: var(--bigPadding);
 		border-bottom: 1px solid var(--border);
-		&:first-child {
-			text-align: left;
-		}
 	}
 
 	&__td {
@@ -113,6 +108,7 @@
 	}
 
 	&__see-more-link {
+		transition-duration: var(--transition);
 		color: var(--TextGray);
 		font-family: 'CoreSansC';
 		$fs: 20;
@@ -121,5 +117,14 @@
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.4px;
 		@include common-value('margin-bottom', 25);
+		@media (hover: hover) {
+			&:hover {
+				color: var(--TextDark);
+			}
+		}
+		&:active,
+		&:focus-visible {
+			color: var(--TextDark);
+		}
 	}
 }
