@@ -1,11 +1,11 @@
 include html/_mixins.pug
 doctype html
 html(lang="ru")
-	+head('Card template', 'description','card')
+	+head('Euphoria - Ecommerce Website Template', 'description','category')
 	body
 		.wrapper
 			include html/_header.pug
 			main#page.page
-				include html/card/_card.pug
+				include html/catalog/_category.pug
 			include html/_footer.pug
-		+js('card')
+		+js('category')

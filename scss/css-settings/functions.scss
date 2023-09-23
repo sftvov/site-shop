@@ -44,7 +44,7 @@ body._no-select {
 
 ._section {
 	width: 100%;
-	@include common-value('margin-bottom', 50);
+	margin-bottom: var(--adaptive-50);
 }
 
 ._hidden-title {
@@ -65,7 +65,7 @@ body._no-select {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background: var(--darkMask) url('../img/icons/loading.gif') center / 50px no-repeat;
+	background: var(--dark) url('../img/icons/loading.gif') center / 50px no-repeat;
 }
 
 ._tabs-block:not(._active) {

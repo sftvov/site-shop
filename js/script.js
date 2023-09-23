@@ -2,6 +2,14 @@ const body = document.querySelector('body');
 const wrapper = document.querySelector('.wrapper');
 const page = document.querySelector('.page');
 const header = document.querySelector('.header');
+const footer = document.querySelector('.footer');
+
+const header__logoLink = document.querySelector('.header__logo-link');
+const header__searchWrapper = document.querySelector('.header__search-wrapper');
+const header__searchInput = document.querySelector('.header__search-input');
+const header__iconSearch = document.querySelector('.header__icon--search');
+const header__icons = document.querySelectorAll('.header__icon');
+const header__lastIcon = header__icons[header__icons.length - 1];
 
 // ----------------------------------------------------------------------
 
@@ -18,61 +26,21 @@ const md5 = getComputedStyle(document.documentElement)
 
 // ----------------------------------------------------------------------
 
-// let headerHeight;
-
-// function hh() {
-// 	headerHeight = header.offsetHeight;
-// };
-
-// function spaceForHeader() {
-// 	hh();
-// 	let pElements = document.querySelectorAll('._padding-header');
-// 	if(pElements) {
-// 		for(el of pElements) {
-// 			el.style.paddingTop = headerHeight + 'px';
-// 		}
-// 	}
-// 	let mElements = document.querySelectorAll('._margin-header');
-// 	if(mElements) {
-// 		for(el of mElements) {
-// 			el.style.marginTop = headerHeight + 'px';
-// 		}
-// 	}
-// }
-
-
-// function spaceForMobileMenu() {
-// 	if (body.offsetWidth < 939.95 && !window.offsetWidth) {
-// 		headerHeight = headerBody.offsetHeight;
-//     header.style.marginTop = headerHeight + 'px';
-// 		menu.style.paddingTop = headerHeight + 'px';
-// 		topBody.classList.add('_container');
-// 	}
-// 	else {
-//     header.removeAttribute('style');
-// 		menu.removeAttribute('style');
-// 		topBody.classList.remove('_container');
-// 	}
-// }
-
-// ----------------------------------------------------------------------
-
-// include('functions/sendmail.js');
+// include('../../../src/functions/sendmail.js');
 @@include('../../../src/functions/isMobile.js');
 @@include('../../../src/functions/webp.js');
 @@include('../../../src/functions/slide.js');
 @@include('../../../src/functions/activator.js');
 @@include('../../../src/functions/body_lock.js');
-// include('functions/dynamic_adapt.js');
-// include('elements/search.js');
-// include('elements/tabs.js');
-// include('elements/popups.js');
-// include('elements/gallery.js');
+@@include('../../../src/functions/dynamic_adapt.js');
+// include('../../../src/js-elements/search.js');
+// include('../../../src/js-elements/tabs.js');
+// include('../../../src/js-elements/popups.js');
+// include('../../../src/js-elements/gallery.js');
+// include('../../../src/js-elements/scroll.js');
+@@include('../../../src/js-elements/spollers.js');
 @@include('../../../src/libs/swiper.min.js');
-// include('elements/scroll.js');
-@@include('elements/spollers.js');
-
-// ----------------------------------------------------------------------
+//include('elements/shiftPressed.js');
 
 // ----------------------------------------------------------------------
 
@@ -86,28 +54,11 @@ activator('.header__icon--search',{
 	// onlyOne: true,
 	clickOutClose: true,
 	escClose: true,
+	// inert: [header, footer, filter, description],
+	focus: header__searchInput,
 });
 
-activator('.filter-button',{ 
-	removed: ['.filter'], 
-	bodyLock: true,
-	escClose: true,
-});
-
-activator('.filter__color-item', {});
-activator('.filter__size', {});
-activator('.goods__icon-favorite', {
-	clickOutClose: true
-});
-
-activator('.goods__filter', {
-	deactivate: false,
-	onlyOne: true,
-});
-
-
-
-let headerCategoriesSlider = new Swiper('.header__menu-wrapper', {
+const headerCategoriesSlider = new Swiper('.menu', {
 	// direction: 'vertical',
 	observer: true,
 	observeParents: true,
@@ -127,16 +78,16 @@ let headerCategoriesSlider = new Swiper('.header__menu-wrapper', {
 	speed: 800,
 	// pagination: {
 	// 	el: '.swiper-pagination',
-	// 	type: 'bullets',
+	// 	type: 'progressbar',
 	// 	clickable: true,
 	// },
 	// initialSlide: 2,
 	// effect: 'fade',
 	// Arrows
-	// navigation: {
-	// 	nextEl: '.swiper-button-next',
-	// 	prevEl: '.swiper-button-prev',
-	// },
+	navigation: {
+		nextEl: '.menu__button-next',
+		prevEl: '.menu__button-prev',
+	},
 	// mousewheel: true,
 	// scrollbar: {
 	//   el: '.swiper-scrollbar',
@@ -164,8 +115,7 @@ let headerCategoriesSlider = new Swiper('.header__menu-wrapper', {
 	// }
 });
 
-window.onload = () => {
-	addTouchClassForMobile();
-}
-
-
+// window.onload = () => {
+// 	addTouchClassForMobile();
+// 	console.log(typeof(header));
+// }

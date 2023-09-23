@@ -1,9 +1,9 @@
 @use 'sass:math';
 .filter {
-	transition: left var(--transition) ease-in;
-	color: var(--TextGray);
 	@include common-value('--filter', 295);
-	background-color: #ffffff;
+	transition: all var(--transition) ease-in;
+	color: var(--text-second);
+	background-color: var(--white--dark);
 	border-right: 1px solid var(--border);
 	border-left: 1px solid var(--border);
 	@media (min-width: $md3+px) {
@@ -11,6 +11,7 @@
 	}
 	@media (max-width: $md3+px) {
 		z-index: 2;
+		visibility: hidden;
 		position: fixed;
 		top: 0;
 		left: -100%;
@@ -18,6 +19,7 @@
 		height: 100%;
 		overflow-y: scroll;
 		&._active {
+			visibility: visible;
 			left: 0;
 		}
 	}
@@ -26,19 +28,19 @@
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		@include common-value('padding-top', 20);
-		@include common-value('padding-right', 30);
-		@include common-value('padding-bottom', 20);
-		@include common-value('padding-left', 30);
+		padding-top: var(--adaptive-20);
+		padding-right: var(--adaptive-30);
+		padding-bottom: var(--adaptive-20);
+		padding-left: var(--adaptive-30);
 		border-bottom: 1px solid var(--border);
 		&:not(:first-child) {
 			@media (hover: hover) {
 				&:hover {
-					color: var(--TextDark);
+					color: var(--text-main);
 				}
 			}
 			&:focus-visible {
-				color: var(--TextDark);
+				color: var(--text-main);
 				& .filter__name {
 					letter-spacing: 0.1em;
 				}
@@ -54,7 +56,7 @@
 	&__name {
 		transition: var(--transition);
 		$fs: 22;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		$lh: 26;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.44px;
@@ -63,22 +65,22 @@
 	&__icon {
 		transition-duration: 0.3s;
 		$fs: 22;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		transform: rotateX(180deg);
 	}
 
 	&__body {
-		@include common-value('padding-top', 40);
+		padding-top: var(--adaptive-40);
 		@include common-value('padding-right', 24);
-		@include common-value('padding-bottom', 40);
-		@include common-value('padding-left', 32);
+		padding-bottom: var(--adaptive-40);
+		padding-left: var(--adaptive-32);
 		border-bottom: 1px solid var(--border);
 	}
 
 	&__categories-wrapper {
 		display: flex;
 		flex-direction: column;
-		@include common-value('row-gap', 18);
+		row-gap: var(--adaptive-18);
 	}
 
 	&__category-link {
@@ -87,14 +89,14 @@
 		justify-content: space-between;
 		@media (hover: hover) {
 			&:hover {
-				color: var(--TextDark);
+				color: var(--text-main);
 			}
 		}
 		&:active,
 		&:focus-visible {
 			& .filter__category-name {
 				letter-spacing: 0.1em;
-				color: var(--TextDark);
+				color: var(--text-main);
 			}
 		}
 	}
@@ -107,13 +109,13 @@
 
 	&__category-icon {
 		$fs: 19;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		transform: rotate(90deg);
 	}
 
 	&__prices-wrapper {
-		@include common-value('padding-left', 2);
-		@include common-value('padding-right', 12);
+		padding-left: var(--adaptive-2);
+		padding-right: var(--adaptive-12);
 	}
 
 	&__price-line {
@@ -135,8 +137,7 @@
 		border-radius: 50%;
 		&:focus {
 			z-index: 1;
-			box-shadow: var(--notWhite) 0 0 0 3px;
-			background-color: var(--hover);
+			box-shadow: var(--not-white) 0 0 0 3px;
 		}
 
 		&--one {
@@ -160,25 +161,24 @@
 		line-height: math.div($lh, $fz);
 		text-align: center;
 		width: 97px;
-		@include common-value('height', 32);
+		height: var(--adaptive-32);
 		border: 1px solid var(--border);
-		@include common-value('border-radius', 8);
+		border-radius: var(--adaptive-8);
 		@media (max-width: $md3+px) {
 			width: 45%;
 		}
 		&:focus {
-			color: var(--TextDark);
-			border-color: var(--dark);
+			color: var(--text-main);
+			border-color: var(--dark--light);
 		}
 	}
 
 	&__colors-wrapper {
-		@include common-value('--width', 36.73);
 		display: grid;
-		grid-template-columns: repeat(auto-fill, var(--width));
-		@include common-value('column-gap', 20);
-		@include common-value('row-gap', 18);
-		@include common-value('padding-left', 7);
+		grid-template-columns: repeat(auto-fill, var(--adaptive-37));
+		column-gap: var(--adaptive-20);
+		row-gap: var(--adaptive-18);
+		padding-left: var(--adaptive-7);
 	}
 
 	&__color-item {
@@ -199,8 +199,8 @@
 		}
 		&._active {
 			& .filter__color-square {
-				border: 2px solid var(--dark);
-				box-shadow: var(--notWhite) 0 0 0 2px inset;
+				border: 2px solid var(--dark--light);
+				box-shadow: var(--light--dark) 0 0 0 2px inset;
 			}
 		}
 	}
@@ -209,83 +209,84 @@
 		transition-duration: 0.1s;
 		width: 100%;
 		aspect-ratio: 1;
-		@include common-value('border-radius', 8);
+		border-radius: var(--adaptive-8);
 		border: 1px solid var(--border);
 	}
 
 	&__color-sign {
 		$fs: 14;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		$lh: 17;
 		line-height: math.div($lh, $fs);
 		text-transform: capitalize;
-		@include common-value('margin-top', 18);
+		margin-top: var(--adaptive-18);
 	}
 
 	&__sizes-wrapper {
 		display: grid;
 		@include common-value('--width', 61);
 		grid-template-columns: repeat(auto-fill, var(--width));
-		@include common-value('column-gap', 20);
-		@include common-value('row-gap', 18);
-		@include common-value('padding-left', 3);
+		column-gap: var(--adaptive-20);
+		row-gap: var(--adaptive-18);
+		padding-left: var(--adaptive-3);
 	}
 
 	&__size {
 		transition-duration: var(--transition);
-		color: var(--TextColor);
+		color: var(--text-main);
 		$fs: 14;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		$lh: 17;
 		line-height: math.div($lh, $fs);
 		font-weight: 600;
 		text-align: center;
 		text-transform: uppercase;
-		@include common-value('border-radius', 8);
+		border-radius: var(--adaptive-8);
 		border: 1px solid var(--border);
-		@include common-value('padding-top', 9);
-		@include common-value('padding-bottom', 6);
+		padding-top: var(--adaptive-9);
+		padding-bottom: var(--adaptive-6);
 		@media (hover: hover) {
 			&:hover {
-				box-shadow: var(--dark) 0 0 0 1px;
+				box-shadow: var(--dark--light) 0 0 0 1px;
 			}
 		}
 		&:focus-visible {
-			box-shadow: var(--dark) 0 0 0 1px;
+			box-shadow: var(--dark--light) 0 0 0 1px;
 		}
 		&._active {
-			color: var(--notWhite);
-			background-color: var(--dark);
+			color: var(--light--dark);
+			background-color: var(--dark--light);
 		}
 	}
 }
 
 .filter-button {
-	z-index: 2;
+	z-index: 3;
 	cursor: pointer;
 	$fs: 20;
-	font-size: math.div($fs, $fz) + em;
+	font-size: math.div($fs, $fz) + rem;
 	line-height: 1;
 	position: fixed;
 	bottom: 100px;
 	right: 20px;
-	@include common-value('padding', 12);
-	@include common-value('border-radius', 8);
-	background-color: var(--notWhite);
+	padding: var(--adaptive-12);
+	border-radius: var(--adaptive-8);
+	background-color: var(--light--dark);
 	border: 1px solid var(--border);
 	@media (min-width: $md3+px) {
 		display: none;
 	}
 	@media (hover: hover) {
 		&:hover {
-			box-shadow: var(--dark) 0 0 0 1px inset, var(--notWhite) 0 0 0 2px inset;
+			box-shadow: var(--dark--light) 0 0 0 1px inset, var(--light--dark) 0 0 0 2px inset;
 		}
 	}
 	&:focus-visible {
-		box-shadow: var(--dark) 0 0 0 1px inset, var(--notWhite) 0 0 0 2px inset;
+		color: var(--not-white);
+		background-color: var(--main);
 	}
-	&._active {
-		color: var(--notWhite);
-		background-color: var(--dark);
+	&._active:not(:focus-visible) {
+		color: var(--light--dark);
+		background-color: var(--dark--light);
 	}
 }

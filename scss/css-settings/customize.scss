@@ -1,12 +1,13 @@
 @use 'sass:math';
 
 body {
-	color: var(--TextColor);
+	color: var(--text-main);
 	@include common-value('font-size', $fz);
 	font-weight: 600;
 	line-height: 1.5;
 	letter-spacing: 0em;
 	font-style: normal;
+	background-color: var(--white--dark);
 }
 
 b {
@@ -15,7 +16,7 @@ b {
 
 // ._h1 {
 // 	$fs: 36;
-// 	font-size: math.div($fs, $fz) + em;
+// 	font-size: math.div($fs, $fz) + rem;
 // 	$lh: 45;
 // 	line-height: math.div($lh, $fs);
 // 	font-weight: 600;
@@ -24,13 +25,13 @@ b {
 ._button {
 	transition: all 0.15s ease;
 	cursor: pointer;
-	@include common-value('padding-top', 8);
-	@include common-value('padding-bottom', 8);
-	@include common-value('padding-left', 16);
-	@include common-value('padding-right', 16);
+	padding-top: var(--adaptive-8);
+	padding-bottom: var(--adaptive-8);
+	padding-left: var(--adaptive-16);
+	padding-right: var(--adaptive-16);
 	border-radius: 7px;
 	color: #ffffff;
-	background-color: var(--TextDark);
+	background-color: var(--text-main);
 	&:hover:not(:disabled) {
 		box-shadow: -2px 2px 0 #000000;
 		transform: translateX(1px) translateY(-1px);
@@ -44,7 +45,7 @@ b {
 		background-color: var(--main);
 		&:hover {
 			color: #ffffff;
-			background-color: var(--bright);
+			background-color: var(--hover);
 		}
 	}
 	&:disabled {

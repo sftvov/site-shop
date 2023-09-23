@@ -6,7 +6,7 @@
 	&__catalog {
 		display: flex;
 		align-items: flex-start;
-		@include common-value('column-gap', 50);
+		column-gap: var(--adaptive-50);
 	}
 
 	&__description {
@@ -15,75 +15,80 @@
 
 .description {
 	@include common-value('margin-top', 100);
-	@include common-value('padding-left', 21);
+	padding-left: var(--adaptive-21);
 	&__h2 {
 		font-family: 'CoreSansC';
 		$fs: 28;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.56px;
 		position: relative;
 		@include common-value('margin-top', 100);
-		@include common-value('margin-bottom', 30);
+		margin-bottom: var(--adaptive-30);
 		&::before {
 			content: '';
 			position: absolute;
 			top: 50%;
 			@include common-value('left', -21);
 			translate: 0 -50%;
-			@include common-value('width', 6);
+			width: var(--adaptive-6);
 			height: 83.6%;
 			background-color: var(--main);
 		}
 	}
 	&__h3 {
-		color: var(--TextGray);
+		color: var(--text-second);
 		font-family: 'CoreSansC';
 		$fs: 20;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.4px;
-		@include common-value('margin-bottom', 25);
+		margin-bottom: var(--adaptive-25);
 	}
 
 	&__p {
-		color: var(--TextGray);
+		color: var(--text-second);
 		$fs: 20;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		font-weight: 400;
 		letter-spacing: 0.4px;
-		@include common-value('margin-bottom', 20);
+		margin-bottom: var(--adaptive-20);
 	}
 
 	&__table {
-		@include common-value('--padding', 17);
 		@include common-value('--bigPadding', 41);
 		@include common-value('--firstElPadding', 84);
+		@include common-value('--negativeMargin', -21);
 		width: 100%;
-		@include common-value('margin-top', 50);
-		background-color: var(--notWhite);
+		margin-top: var(--adaptive-50);
+		background-color: var(--light--black);
 		border-collapse: collapse;
-		@include common-value('border-radius', 12);
+		border-radius: var(--adaptive-12);
+		@media (max-width: $md3+px) {
+			margin-left: var(--negativeMargin);
+			width: calc(100% - var(--negativeMargin));
+		}
 	}
 
 	&__td,
 	&__th {
 		$fs: 24;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.48px;
 		text-align: center;
-		padding: var(--padding);
+		padding: var(--adaptive-17);
 		border-left: 1px solid var(--border);
 
 		&--first-element {
 			text-align: left;
 			border-left: none;
+			padding-left: calc(0px - var(--negativeMargin));
 			@media (min-width: $md3+px) {
 				padding-left: var(--firstElPadding);
 			}
@@ -97,7 +102,7 @@
 	}
 
 	&__td {
-		color: var(--TextGray);
+		color: var(--text-second);
 		font-weight: 400;
 		&--under-th {
 			padding-top: var(--bigPadding);
@@ -109,22 +114,22 @@
 
 	&__see-more-link {
 		transition-duration: var(--transition);
-		color: var(--TextGray);
+		color: var(--text-second);
 		font-family: 'CoreSansC';
 		$fs: 20;
-		font-size: math.div($fs, $fz) + em;
+		font-size: math.div($fs, $fz) + rem;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.4px;
-		@include common-value('margin-bottom', 25);
+		margin-bottom: var(--adaptive-25);
 		@media (hover: hover) {
 			&:hover {
-				color: var(--TextDark);
+				color: var(--text-main);
 			}
 		}
 		&:active,
 		&:focus-visible {
-			color: var(--TextDark);
+			color: var(--text-main);
 		}
 	}
 }

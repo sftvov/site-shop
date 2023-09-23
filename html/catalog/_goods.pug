@@ -1,180 +1,5 @@
--
-  const goods = [
-    {
-      name: 'Black Sweatshirt with ....',
-      brand: 'Jhanvi’s  Brand',
-      price: '123.00',
-      img: 'img/products/prod-1.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'White T-shirt',
-      brand: 'Helen’s  Brand',
-      price: '11.00',
-      img: 'img/products/prod-18.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Levender Sweatshirt ....',
-      brand: 'Jhanvi’s  Brand',
-      price: '133.00',
-      img: 'img/products/prod-7.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Leaves Pattern White...',
-      brand: 'paypal’s  Brand',
-      price: '77.00',
-      img: 'img/products/prod-23.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'White Graphic Crop Top',
-      brand: 'woden’s  Brand',
-      price: '29.00',
-      img: 'img/products/prod-25.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Black Shorts',
-      brand: 'MM’s  Brand',
-      price: '37.00',
-      img: 'img/products/prod-22.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Barboreal Gray Sweats...',
-      brand: 'Priya’s  Brand',
-      price: '77.00',
-      img: 'img/products/prod-26.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Yellow Sweatshirt',
-      brand: 'woden’s  Brand',
-      price: '29.00',
-      img: 'img/products/prod-21.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Flower Pattern Black C...',
-      brand: 'MM’s  Brand',
-      price: '37.00',
-      img: 'img/products/prod-24.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'I Don’t Graphic T-shirt ',
-      brand: 'Nisargi’s  Brand',
-      price: '77.00',
-      img: 'img/products/prod-20.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Blue Flower Print Crop ....',
-      brand: 'Mellon’s  Brand',
-      price: '29.00',
-      img: 'img/products/prod-19.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'line Pattern Black H...',
-      brand: 'AS’s  Brand',
-      price: '37.00',
-      img: 'img/products/prod-27.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'White T-Shirt',
-      brand: 'Priya’s  Brand',
-      price: '13.00',
-      img: 'img/products/prod-4.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Urban jacket with white ....',
-      brand: 'Sagar’s  Brand',
-      price: '79.00' ,
-      img: 'img/products/prod-2.jpg',
-    },
-    {
-      name: 'One piece black top & ....',
-      brand: 'Nike’s  Brand',
-      price: '123.00',
-      img: 'img/products/prod-3.jpg',
-      sex: 'w',
-    },
-    {
-      name: 'Dark Green Sweatshirt....',
-      brand: 'Roboto’s  Brand',
-      price: '127.00',
-      img: 'img/products/prod-5.jpg',
-      sex: 'm'
-    },
-    {
-      name: 'Checks Shirt with white.....',
-      brand: 'H.M’s  Brand',
-      price: '123.00',
-      img: 'img/products/prod-6.jpg',
-      sex: 'm'
-    },
-    {
-      name: 'Plain White T-Shirt',
-      brand: 'Jhanvi’s  Brand',
-      price: '123.00',
-      img: 'img/products/prod-8.jpg',
-      sex: 'm'
-    },
-    {
-      name: 'Denim Blue Shirt',
-      brand: 'MOMO’s  Brand',
-      price: '38.00',
-      img: 'img/products/prod-9.jpg',
-      sex: 'm'
-    }
-  ];
-  const cats = [
-    {
-      name: 'Printed T-Shirts',
-      sign: 'Explore Now!',
-      img: 'img/products/prod-13.jpg',
-    },
-    {
-      name: 'Plain T-Shirt',
-      sign: 'Explore Now!',
-      img: 'img/products/prod-17.jpg',
-    },
-    {
-      name: 'Polo T-Shirt',
-      sign: 'Explore Now!',
-      img: 'img/products/prod-14.jpg',
-    },
-    {
-      name: 'Boxers',
-      sign: 'Explore Now!',
-      img: 'img/products/prod-11.jpg',
-    },
-    {
-      name: 'Activewear',
-      sign: 'Explore Now!',
-      img: 'img/products/prod-15.jpg',
-    },    
-    {
-      name: 'Boxers',
-      sign: 'Explore Now!',
-      img: 'img/products/prod-16.jpg',
-    },
-    {
-      name: 'Hoodies & Sweetshirt',
-      sign: 'Explore Now!',
-      img: 'img/products/prod-10.jpg',
-    },
-    {
-      name: 'Coats & Parkas',
-      sign: 'Explore Now!',
-      img: 'img/products/prod-12.jpg',
-    },
-  ]
+include ../_bd.pug
+-  
   n = 0;
 .goods
   .goods__top
@@ -182,18 +7,19 @@
     .goods__filtration
       button.goods__filter._active New
       button.goods__filter Recommended
-  .goods__grid    
-    while n < 12
-      if (goods[n].sex === 'w')
-        article.goods__card
-          .goods__card-image
-            button.goods__icon-favorite._icon-heart(aria-label='add ' + goods[n].name + ' to favorite')
-            img(src=goods[n].img alt=goods[n].name)
-          .goods__card-bottom
-            .goods__card-text
-              h2.goods__card-title
-                a(href='/') #{goods[n].name}
-              p.goods__card-brand #{goods[n].brand}
-            .goods__card-price $#{goods[n].price}        
-        -
-          n++;
+  .goods__grid
+    each good in goods
+      if n < 12
+        if (good.sex === 'w')
+          article.goods__card
+            .goods__card-image
+              button.goods__icon-favorite._icon-heart(aria-label='add ' + good.name + ' to favorite')
+              img.goods__card-img(src=good.img alt=good.name)
+            .goods__card-bottom
+              .goods__card-text
+                h2.goods__card-title
+                  a.goods__card-link(href='/') #{good.name}
+                p.goods__card-brand #{good.brand}
+              .goods__card-price $#{good.price}        
+          -
+            n++;

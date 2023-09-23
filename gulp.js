@@ -25,9 +25,10 @@ export const imageSet = {
 	retinaArr: retinaArr,
 };
 
+//gulp changeNames
 export const renameObj = {
-	folder: '/img/popups',
-	name: 'popup-',
+	folder: '/img/advantages',
+	name: 'advan-',
 };
-
-export const pugFile = 'catalog/_category';
+// gulp getHtml
+export const pugFile = 'card/_card';

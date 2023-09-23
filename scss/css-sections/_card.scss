@@ -1,0 +1,227 @@
+@use 'sass:math';
+.card {
+	$fs: 18;
+	font-size: math.div($fs, $fz) + rem;
+	$lh: 22;
+	line-height: math.div($lh, $fs);
+	&__container {
+	}
+
+	&__top {
+		display: flex;
+	}
+
+	&__gallery {
+		display: flex;
+		@include common-value('width', 640);
+		@include common-value('margin-right', 69);
+	}
+
+	&__mini-slider {
+		flex-shrink: 0;
+		flex-basis: 200px;
+		height: 785px;
+		& img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__main-slider {
+		& img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__info {
+		padding-top: var(--adaptive-31);
+	}
+
+	&__breadcrumbs {
+		color: var(--text-second);
+		display: flex;
+		align-items: center;
+	}
+
+	&__bread {
+		display: inline-flex;
+		@media (hover: hover) {
+			&:hover {
+				color: var(--main);
+			}
+		}
+		&:active,
+		&:focus-visible {
+			color: var(--main);
+		}
+		&:not(:first-child) {
+			margin-left: var(--adaptive-6);
+			&:before {
+				$fs: 15;
+				font-size: math.div($fs, $fz) + rem;
+				content: '\e911';
+				font-family: 'icons' !important;
+				line-height: 1;
+				vertical-align: bottom;
+				transform: rotate(90deg);
+				margin-right: var(--adaptive-11);
+			}
+		}
+	}
+
+	&__title {
+		font-family: 'CoreSansC';
+		$fs: 34;
+		font-size: math.div($fs, $fz) + rem;
+		line-height: 1.4;
+		letter-spacing: 0.68px;
+		text-wrap: balance;
+		margin-top: var(--adaptive-30);
+		margin-bottom: var(--adaptive-31);
+	}
+
+	&__rating {
+		display: flex;
+		align-items: center;
+	}
+
+	&__stars {
+		display: flex;
+		align-items: center;
+		column-gap: var(--adaptive-10);
+		margin-right: var(--adaptive-27);
+	}
+
+	&__star {
+		width: 22px;
+		height: 22px;
+		background-color: var(--light);
+		-webkit-mask-image: url(../img/svg/star.svg);
+		margin-bottom: var(--adaptive-3);
+		&--full {
+			background-color: var(--gold);
+		}
+	}
+
+	&__stars-num {
+		color: var(--text-second);
+		margin-left: var(--adaptive-3);
+	}
+
+	&__comment-counts {
+		color: var(--text-second);
+		display: flex;
+		align-items: center;
+		&::before {
+			$fs: 22;
+			font-size: math.div($fs, $fz) + rem;
+			margin-right: var(--adaptive-16);
+			margin-bottom: var(--adaptive-3);
+		}
+	}
+
+	&__select-characters {
+		display: flex;
+		flex-wrap: wrap;
+		@include common-value('margin-top', 35);
+	}
+
+	&__character {
+		margin-right: var(--adaptive-20);
+	}
+
+	&__download {
+	}
+
+	&__change {
+		display: flex;
+		flex-basis: 100%;
+		&--size {
+		}
+
+		&--color {
+		}
+	}
+
+	&__size {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: var(--adaptive-1) solid var(--dark--light);
+		width: var(--adaptive-37);
+		height: var(--adaptive-37);
+	}
+
+	&__color {
+	}
+
+	&__button {
+	}
+
+	&__price {
+	}
+
+	&__advantages {
+	}
+
+	&__advantage {
+	}
+
+	&__advantage-img {
+	}
+
+	&__description {
+	}
+}
+.description {
+	&__title {
+	}
+
+	&__body {
+		display: flex;
+	}
+
+	&__main {
+	}
+
+	&__tabs {
+	}
+
+	&__tab {
+	}
+
+	&__count {
+	}
+
+	&__count--comments {
+	}
+
+	&__count--questions {
+	}
+
+	&__info {
+	}
+
+	&__text {
+	}
+
+	&__table {
+	}
+
+	&__video-wrapper {
+	}
+
+	&__video {
+	}
+}
+.description-table {
+	&__row {
+	}
+
+	&__ceil {
+	}
+
+	&__title {
+	}
+}
