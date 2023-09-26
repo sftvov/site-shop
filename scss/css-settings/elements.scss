@@ -33,20 +33,20 @@
 // 		max-width: 600px;
 // 		width: 100%;
 // 		background-color: #ffffff;
-// 		padding: var(--adaptive-50);
-// 		border-radius: var(--adaptive-20);
+// 		padding: var(--adaptive-49);
+// 		border-radius: var(--adaptive-19);
 // 	}
 
 // 	&__title {
 // 		$fs: 30;
-// 		font-size: math.div($fs, $fz) + rem;
+// 		font-size: math.div($fs, $fz) + em;
 // 		font-weight: 600;
-// 		margin-bottom: var(--adaptive-20);
+// 		margin-bottom: var(--adaptive-19);
 // 	}
 
 // 	&__description {
 // 		$fs: 18;
-// 		font-size: math.div($fs, $fz) + rem;
+// 		font-size: math.div($fs, $fz) + em;
 // 		max-width: 450px;
 // 		margin-bottom: var( --adaptive-10);
 // 	}
@@ -75,7 +75,7 @@
 // 	&__input,
 // 	&__textarea {
 // 		$fs: 18;
-// 		font-size: math.div($fs, $fz) + rem;
+// 		font-size: math.div($fs, $fz) + em;
 // 		&::placeholder {
 // 			transition: all 0.3s ease;
 // 		}
@@ -136,12 +136,12 @@
 // 		cursor: pointer;
 // 		font-family: 'Roboto';
 // 		$fs: 14;
-// 		font-size: math.div($fs, $fz) + rem;
+// 		font-size: math.div($fs, $fz) + em;
 // 		font-style: normal;
 // 		font-weight: 400;
 // 		text-align: left;
 // 		display: flex;
-// 		margin-top: var(--adaptive-20);
+// 		margin-top: var(--adaptive-19);
 // 	}
 // 	&__agreement-text {
 // 		position: relative;
@@ -238,7 +238,7 @@
 // 	&__input {
 // 		input {
 // 			$fs: 14;
-// 			font-size: math.div($fs, $fz) + rem;
+// 			font-size: math.div($fs, $fz) + em;
 // 			text-align: center;
 // 			color: var(--text-main);
 // 			width: 100%;

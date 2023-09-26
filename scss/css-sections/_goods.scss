@@ -6,16 +6,16 @@
 	}
 	&__top {
 		$fs: 22;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 26;
 		line-height: math.div($lh, $fs);
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 		column-gap: 20px;
-		row-gap: var(--adaptive-20);
-		margin-top: var(--adaptive-50);
-		margin-bottom: var(--adaptive-50);
+		row-gap: var(--adaptive-19);
+		margin-top: var(--adaptive-49);
+		margin-bottom: var(--adaptive-49);
 	}
 
 	&__title {
@@ -49,7 +49,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
 		justify-content: space-between;
-		row-gap: var(--adaptive-50);
+		row-gap: var(--adaptive-49);
 		column-gap: 2.739%;
 		@media (max-width: $md5+px) {
 			grid-template-columns: repeat(2, 48.6305%);
@@ -86,7 +86,7 @@
 		overflow: hidden;
 		position: relative;
 		aspect-ratio: 282/370;
-		border-radius: var(--adaptive-12);
+		border-radius: var(--adaptive-13);
 	}
 
 	&__card-img {
@@ -102,7 +102,7 @@
 		transition-duration: var(--transition);
 		color: var(--dark);
 		$fs: 18;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		@media (max-width: $md3+px) {
 			font-size: 18px;
 		}
@@ -110,8 +110,8 @@
 			font-size: 2.6vw;
 		}
 		position: absolute;
-		top: var(--adaptive-27);
-		right: var(--adaptive-21);
+		top: var(--adaptive-28);
+		right: var(--adaptive-22);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -137,7 +137,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		margin-top: var(--adaptive-30);
+		margin-top: var(--adaptive-31);
 	}
 
 	&__card-text {
@@ -150,7 +150,7 @@
 		text-overflow: ellipsis;
 		$lh: 19;
 		line-height: math.div($lh, $fz);
-		margin-bottom: var(--adaptive-5);
+		margin-bottom: var(--adaptive-4);
 	}
 
 	&__card-link {
@@ -179,7 +179,7 @@
 		text-overflow: ellipsis;
 		color: var(--text-second);
 		$fs: 14;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 17;
 		line-height: math.div($lh, $fs);
 		font-weight: 500;
@@ -187,11 +187,11 @@
 
 	&__card-price {
 		$fs: 14;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 17;
 		line-height: math.div($lh, $fs);
 		font-weight: 700;
-		padding: var(--adaptive-10) var(--adaptive-20) var(--adaptive-10) var(--adaptive-20);
+		padding: var(--adaptive-10) var(--adaptive-19) var(--adaptive-10) var(--adaptive-19);
 		background-color: var(--gray--light);
 	}
 }

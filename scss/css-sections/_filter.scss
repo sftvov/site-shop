@@ -1,13 +1,12 @@
 @use 'sass:math';
 .filter {
-	@include common-value('--filter', 295);
 	transition: all var(--transition) ease-in;
 	color: var(--text-second);
 	background-color: var(--white--dark);
 	border-right: 1px solid var(--border);
 	border-left: 1px solid var(--border);
 	@media (min-width: $md3+px) {
-		width: var(--filter);
+		width: var(--adaptive-295);
 	}
 	@media (max-width: $md3+px) {
 		z-index: 2;
@@ -28,10 +27,10 @@
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		padding-top: var(--adaptive-20);
-		padding-right: var(--adaptive-30);
-		padding-bottom: var(--adaptive-20);
-		padding-left: var(--adaptive-30);
+		padding-top: var(--adaptive-19);
+		padding-right: var(--adaptive-31);
+		padding-bottom: var(--adaptive-19);
+		padding-left: var(--adaptive-31);
 		border-bottom: 1px solid var(--border);
 		&:not(:first-child) {
 			@media (hover: hover) {
@@ -56,7 +55,7 @@
 	&__name {
 		transition: var(--transition);
 		$fs: 22;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 26;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.44px;
@@ -65,7 +64,7 @@
 	&__icon {
 		transition-duration: 0.3s;
 		$fs: 22;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		transform: rotateX(180deg);
 	}
 
@@ -73,14 +72,14 @@
 		padding-top: var(--adaptive-40);
 		@include common-value('padding-right', 24);
 		padding-bottom: var(--adaptive-40);
-		padding-left: var(--adaptive-32);
+		padding-left: var(--adaptive-31);
 		border-bottom: 1px solid var(--border);
 	}
 
 	&__categories-wrapper {
 		display: flex;
 		flex-direction: column;
-		row-gap: var(--adaptive-18);
+		row-gap: var(--adaptive-19);
 	}
 
 	&__category-link {
@@ -109,13 +108,13 @@
 
 	&__category-icon {
 		$fs: 19;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		transform: rotate(90deg);
 	}
 
 	&__prices-wrapper {
-		padding-left: var(--adaptive-2);
-		padding-right: var(--adaptive-12);
+		padding-left: var(--adaptive-1);
+		padding-right: var(--adaptive-13);
 	}
 
 	&__price-line {
@@ -161,9 +160,9 @@
 		line-height: math.div($lh, $fz);
 		text-align: center;
 		width: 97px;
-		height: var(--adaptive-32);
+		height: var(--adaptive-31);
 		border: 1px solid var(--border);
-		border-radius: var(--adaptive-8);
+		border-radius: var(--adaptive-7);
 		@media (max-width: $md3+px) {
 			width: 45%;
 		}
@@ -176,8 +175,8 @@
 	&__colors-wrapper {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, var(--adaptive-37));
-		column-gap: var(--adaptive-20);
-		row-gap: var(--adaptive-18);
+		column-gap: var(--adaptive-19);
+		row-gap: var(--adaptive-19);
 		padding-left: var(--adaptive-7);
 	}
 
@@ -209,42 +208,41 @@
 		transition-duration: 0.1s;
 		width: 100%;
 		aspect-ratio: 1;
-		border-radius: var(--adaptive-8);
+		border-radius: var(--adaptive-7);
 		border: 1px solid var(--border);
 	}
 
 	&__color-sign {
 		$fs: 14;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 17;
 		line-height: math.div($lh, $fs);
 		text-transform: capitalize;
-		margin-top: var(--adaptive-18);
+		margin-top: var(--adaptive-19);
 	}
 
 	&__sizes-wrapper {
 		display: grid;
-		@include common-value('--width', 61);
-		grid-template-columns: repeat(auto-fill, var(--width));
-		column-gap: var(--adaptive-20);
-		row-gap: var(--adaptive-18);
-		padding-left: var(--adaptive-3);
+		grid-template-columns: repeat(auto-fill, var(--adaptive-61));
+		column-gap: var(--adaptive-19);
+		row-gap: var(--adaptive-19);
+		padding-left: var(--adaptive-4);
 	}
 
 	&__size {
 		transition-duration: var(--transition);
 		color: var(--text-main);
 		$fs: 14;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 17;
 		line-height: math.div($lh, $fs);
 		font-weight: 600;
 		text-align: center;
 		text-transform: uppercase;
-		border-radius: var(--adaptive-8);
+		border-radius: var(--adaptive-7);
 		border: 1px solid var(--border);
-		padding-top: var(--adaptive-9);
-		padding-bottom: var(--adaptive-6);
+		padding-top: var(--adaptive-10);
+		padding-bottom: var(--adaptive-7);
 		@media (hover: hover) {
 			&:hover {
 				box-shadow: var(--dark--light) 0 0 0 1px;
@@ -264,13 +262,13 @@
 	z-index: 3;
 	cursor: pointer;
 	$fs: 20;
-	font-size: math.div($fs, $fz) + rem;
+	font-size: math.div($fs, $fz) + em;
 	line-height: 1;
 	position: fixed;
 	bottom: 100px;
 	right: 20px;
-	padding: var(--adaptive-12);
-	border-radius: var(--adaptive-8);
+	padding: var(--adaptive-13);
+	border-radius: var(--adaptive-7);
 	background-color: var(--light--dark);
 	border: 1px solid var(--border);
 	@media (min-width: $md3+px) {

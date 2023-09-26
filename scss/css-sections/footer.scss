@@ -2,7 +2,7 @@
 .footer {
 	color: var(--not-white);
 	width: 100%;
-	@include common-value('margin-top', 100);
+	margin-top: var(--adaptive-100);
 	background-color: var(--dark--black);
 	&__container {
 	}
@@ -17,22 +17,20 @@
 	}
 
 	&__main-content {
-		--row-gap: var(--adaptive-40);
-		--column-gap: var(--adaptive-80);
 		display: grid;
 		grid-template: auto auto / auto auto;
-		column-gap: var(--column-gap);
-		@include common-value('padding-top', 59);
+		column-gap: var(--adaptive-79);
+		padding-top: var(--adaptive-58);
 		@media (max-width: $md3+px) {
-			row-gap: var(--row-gap);
+			row-gap: var(--adaptive-40);
 		}
 	}
 
 	&__columns-wrapper {
 		display: flex;
-		row-gap: var(--row-gap);
+		row-gap: var(--adaptive-40);
 		@media (min-width: $md3+px) {
-			column-gap: var(--column-gap);
+			column-gap: var(--adaptive-79);
 		}
 		@media (max-width: $md3+px) {
 			grid-column: span 2;
@@ -74,7 +72,7 @@
 
 	&__category-title {
 		$fs: 28.6;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 62;
 		line-height: math.div($lh, $fs);
 		font-weight: 700;
@@ -85,13 +83,13 @@
 		&--category {
 			display: flex;
 			flex-wrap: wrap;
-			column-gap: var(--adaptive-20);
+			column-gap: var(--adaptive-19);
 		}
 	}
 
 	&__column-item {
 		$fs: 18;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 44;
 		line-height: math.div($lh, $fs);
 		font-weight: 500;
@@ -127,7 +125,7 @@
 	&__social-link {
 		transition-duration: var(--transition);
 		$fs: 37;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		line-height: 1;
 		@media (hover: hover) {
 			&:hover {
@@ -145,8 +143,8 @@
 	&__download-wrapper {
 		display: flex;
 		flex-wrap: wrap;
-		row-gap: var(--adaptive-21);
-		column-gap: var(--adaptive-21);
+		row-gap: var(--adaptive-22);
+		column-gap: var(--adaptive-22);
 		margin-top: var(--adaptive-10);
 		@media (max-width: $md3+px) {
 			justify-content: center;
@@ -158,9 +156,9 @@
 		position: relative;
 		display: flex;
 		align-items: center;
-		padding-top: var(--adaptive-9);
-		padding-right: var(--adaptive-11);
-		@include common-value('padding-bottom', 7.5);
+		padding-top: var(--adaptive-10);
+		padding-right: var(--adaptive-10);
+		padding-bottom: var(--adaptive-7);
 		@include common-value('padding-left', 49);
 		@media (hover: hover) {
 			&:hover {
@@ -189,12 +187,12 @@
 	&__app-text-wrapper {
 		display: flex;
 		flex-direction: column;
-		@include common-value('row-gap', 1);
+		row-gap: var(--adaptive-1);
 	}
 
 	&__app-text-title {
 		$fs: 18;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 22;
 		line-height: math.div($lh, $fs);
 		font-weight: 400;
@@ -202,11 +200,11 @@
 
 	&__app-text-sup {
 		$fs: 10;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 12;
 		line-height: math.div($lh, $fs);
 		font-weight: 400;
-		margin-left: var(--adaptive-2);
+		margin-left: var(--adaptive-1);
 	}
 
 	&__categories-spoiler {
@@ -214,8 +212,8 @@
 		@include common-value('margin-top', 44);
 		border-top: 1px solid var(--border);
 		border-bottom: 1px solid var(--border);
-		padding-top: var(--adaptive-9);
-		padding-bottom: var(--adaptive-11);
+		padding-top: var(--adaptive-10);
+		padding-bottom: var(--adaptive-10);
 	}
 
 	&__spoiler-title-wrapper {
@@ -243,20 +241,20 @@
 	&__spoiler-chevron {
 		transition-duration: var(--transition);
 		$fs: 37;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		line-height: 1;
 		transform: rotateX(180deg);
 	}
 
 	&__copyright-wrapper {
 		padding-top: var(--adaptive-37);
-		@include common-value('padding-bottom', 59);
+		padding-bottom: var(--adaptive-58);
 		text-align: center;
 	}
 
 	&__copyright-text {
 		$fs: 18;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 36;
 		line-height: math.div($lh, $fs);
 		font-weight: 700;

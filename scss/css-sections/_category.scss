@@ -6,7 +6,7 @@
 	&__catalog {
 		display: flex;
 		align-items: flex-start;
-		column-gap: var(--adaptive-50);
+		column-gap: var(--adaptive-49);
 	}
 
 	&__description {
@@ -14,25 +14,25 @@
 }
 
 .description {
-	@include common-value('margin-top', 100);
-	padding-left: var(--adaptive-21);
+	margin-top: var(--adaptive-100);
+	padding-left: var(--adaptive-22);
 	&__h2 {
 		font-family: 'CoreSansC';
 		$fs: 28;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.56px;
 		position: relative;
-		@include common-value('margin-top', 100);
-		margin-bottom: var(--adaptive-30);
+		margin-top: var(--adaptive-100);
+		margin-bottom: var(--adaptive-31);
 		&::before {
 			content: '';
 			position: absolute;
 			top: 50%;
 			@include common-value('left', -21);
 			translate: 0 -50%;
-			width: var(--adaptive-6);
+			width: var(--adaptive-7);
 			height: 83.6%;
 			background-color: var(--main);
 		}
@@ -41,7 +41,7 @@
 		color: var(--text-second);
 		font-family: 'CoreSansC';
 		$fs: 20;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.4px;
@@ -51,23 +51,21 @@
 	&__p {
 		color: var(--text-second);
 		$fs: 20;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		font-weight: 400;
 		letter-spacing: 0.4px;
-		margin-bottom: var(--adaptive-20);
+		margin-bottom: var(--adaptive-19);
 	}
 
 	&__table {
-		@include common-value('--bigPadding', 41);
-		@include common-value('--firstElPadding', 84);
 		@include common-value('--negativeMargin', -21);
 		width: 100%;
-		margin-top: var(--adaptive-50);
+		margin-top: var(--adaptive-49);
 		background-color: var(--light--black);
 		border-collapse: collapse;
-		border-radius: var(--adaptive-12);
+		border-radius: var(--adaptive-13);
 		@media (max-width: $md3+px) {
 			margin-left: var(--negativeMargin);
 			width: calc(100% - var(--negativeMargin));
@@ -77,12 +75,12 @@
 	&__td,
 	&__th {
 		$fs: 24;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.48px;
 		text-align: center;
-		padding: var(--adaptive-17);
+		padding: var(--adaptive-16);
 		border-left: 1px solid var(--border);
 
 		&--first-element {
@@ -90,25 +88,25 @@
 			border-left: none;
 			padding-left: calc(0px - var(--negativeMargin));
 			@media (min-width: $md3+px) {
-				padding-left: var(--firstElPadding);
+				padding-left: var(--adaptive-85);
 			}
 		}
 	}
 
 	&__th {
-		padding-top: var(--bigPadding);
-		padding-bottom: var(--bigPadding);
-		border-bottom: 1px solid var(--border);
+		padding-top: var(--adaptive-40);
+		padding-bottom: var(--adaptive-40);
+		border-bottom: var(--adaptive-1) solid var(--border);
 	}
 
 	&__td {
 		color: var(--text-second);
 		font-weight: 400;
 		&--under-th {
-			padding-top: var(--bigPadding);
+			padding-top: var(--adaptive-40);
 		}
 		&--last-row {
-			padding-bottom: var(--bigPadding);
+			padding-bottom: var(--adaptive-40);
 		}
 	}
 
@@ -117,7 +115,7 @@
 		color: var(--text-second);
 		font-family: 'CoreSansC';
 		$fs: 20;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 33.5;
 		line-height: math.div($lh, $fs);
 		letter-spacing: 0.4px;

@@ -1,45 +1,38 @@
 :root {
 	@include common-value('--adaptive-1', 1);
-	@include common-value('--adaptive-2', 2);
-	@include common-value('--adaptive-3', 3);
-	// @include common-value('--adaptive-4', 4);
-	@include common-value('--adaptive-5', 5);
-	@include common-value('--adaptive-6', 6);
+	@include common-value('--adaptive-4', 4);
 	@include common-value('--adaptive-7', 7);
-	@include common-value('--adaptive-8', 8);
-	@include common-value('--adaptive-9', 9);
 	@include common-value('--adaptive-10', 10);
-	@include common-value('--adaptive-11', 11);
-	@include common-value('--adaptive-12', 12);
-
-	// @include common-value('--adaptive-13', 13);
-	// @include common-value('--adaptive-14', 14);
-	// @include common-value('--adaptive-15', 15);
-
+	@include common-value('--adaptive-13', 13);
 	@include common-value('--adaptive-16', 16);
-	@include common-value('--adaptive-17', 17);
-	@include common-value('--adaptive-18', 18);
-
-	// @include common-value('--adaptive-19', 19);
-
-	@include common-value('--adaptive-20', 20);
-	@include common-value('--adaptive-21', 21);
-
+	@include common-value('--adaptive-19', 19);
+	@include common-value('--adaptive-22', 22);
 	@include common-value('--adaptive-25', 25);
-
-	@include common-value('--adaptive-27', 27);
-
-	@include common-value('--adaptive-30', 30);
+	@include common-value('--adaptive-28', 28);
 	@include common-value('--adaptive-31', 31);
-	@include common-value('--adaptive-32', 32);
-
+	// @include common-value('--adaptive-34', 34);
 	@include common-value('--adaptive-37', 37);
-
 	@include common-value('--adaptive-40', 40);
-
-	@include common-value('--adaptive-50', 50);
-
-	@include common-value('--adaptive-80', 80);
+	// @include common-value('--adaptive-43', 43);
+	// @include common-value('--adaptive-46', 46);
+	@include common-value('--adaptive-49', 49);
+	// @include common-value('--adaptive-52', 52);
+	// @include common-value('--adaptive-55', 55);
+	@include common-value('--adaptive-58', 58);
+	@include common-value('--adaptive-61', 61);
+	// @include common-value('--adaptive-64', 64);
+	// @include common-value('--adaptive-67', 67);
+	// @include common-value('--adaptive-70', 70);
+	// @include common-value('--adaptive-73', 73);
+	// @include common-value('--adaptive-76', 76);
+	@include common-value('--adaptive-79', 79);
+	// @include common-value('--adaptive-82', 82);
+	@include common-value('--adaptive-85', 85);
+	// @include common-value('--adaptive-88', 88);
+	// @include common-value('--adaptive-91', 91);
+	// @include common-value('--adaptive-94', 94);
+	// @include common-value('--adaptive-97', 97);
+	@include common-value('--adaptive-100', 100);
 
 	--md1: #{$md1};
 	--md2: #{$md2};
@@ -106,7 +99,7 @@
 	
 		--swiper-preloader-color: var(--swiper-theme-color);
 	*/
-	--swiper-navigation-size: var(--adaptive-20);
+	--swiper-navigation-size: var(--adaptive-19);
 	// --swiper-navigation-top-offset: 50%;
 	/*
 	--swiper-navigation-sides-offset: 10px;

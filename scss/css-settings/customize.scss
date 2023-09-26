@@ -16,7 +16,7 @@ b {
 
 // ._h1 {
 // 	$fs: 36;
-// 	font-size: math.div($fs, $fz) + rem;
+// 	font-size: math.div($fs, $fz) + em;
 // 	$lh: 45;
 // 	line-height: math.div($lh, $fs);
 // 	font-weight: 600;
@@ -25,8 +25,8 @@ b {
 ._button {
 	transition: all 0.15s ease;
 	cursor: pointer;
-	padding-top: var(--adaptive-8);
-	padding-bottom: var(--adaptive-8);
+	padding-top: var(--adaptive-7);
+	padding-bottom: var(--adaptive-7);
 	padding-left: var(--adaptive-16);
 	padding-right: var(--adaptive-16);
 	border-radius: 7px;

@@ -38,13 +38,13 @@ body._no-select {
 	}
 
 	/* Container variant 2 */
-	// @include adaptiv-value-under('padding-left', 90, 10, $md1, $md4);
-	// @include adaptiv-value-under('padding-right', 90, 10, $md1, $md4);
+	// @include adaptiv-value-under('padding-left', 90, 10, var(--md1), var(--md4));
+	// @include adaptiv-value-under('padding-right', 90, 10, var(--md1), var(--md4));
 }
 
 ._section {
 	width: 100%;
-	margin-bottom: var(--adaptive-50);
+	margin-bottom: var(--adaptive-49);
 }
 
 ._hidden-title {

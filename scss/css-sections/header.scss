@@ -11,7 +11,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		column-gap: var(--adaptive-12);
+		column-gap: var(--adaptive-10);
 		padding-top: var(--adaptive-31);
 		padding-bottom: var(--adaptive-31);
 		@media (max-width: $md3+px) {
@@ -22,7 +22,7 @@
 	&__logo-link {
 		transition-duration: var(--transition);
 		@include common-value('height', 45);
-		margin-right: var(--adaptive-30);
+		margin-right: var(--adaptive-31);
 		&:focus-visible {
 			transform: scale(1.2);
 		}
@@ -36,13 +36,13 @@
 	&__search-wrapper {
 		display: flex;
 		align-items: center;
-		column-gap: var(--adaptive-12);
+		column-gap: var(--adaptive-13);
 		@include common-value('min-width', 267);
-		padding-top: var(--adaptive-12);
-		padding-right: var(--adaptive-20);
-		padding-bottom: var(--adaptive-12);
-		padding-left: var(--adaptive-20);
-		border-radius: var(--adaptive-8);
+		padding-top: var(--adaptive-13);
+		padding-right: var(--adaptive-19);
+		padding-bottom: var(--adaptive-13);
+		padding-left: var(--adaptive-19);
+		border-radius: var(--adaptive-7);
 		background-color: var(--light--dark);
 		@media (min-width: $md3+px) {
 			margin-right: 63px;
@@ -79,7 +79,7 @@
 		&::before {
 			color: var(--text-second);
 			$fs: 20;
-			font-size: math.div($fs, $fz) + rem;
+			font-size: math.div($fs, $fz) + em;
 			line-height: 1;
 		}
 	}
@@ -97,17 +97,17 @@
 	&__icons-wrapper {
 		display: flex;
 		align-items: center;
-		column-gap: var(--adaptive-12);
+		column-gap: var(--adaptive-10);
 	}
 
 	&__icon {
 		cursor: pointer;
 		transition-duration: var(--transition);
 		$fs: 20;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		line-height: 1;
-		padding: var(--adaptive-12);
-		border-radius: var(--adaptive-8);
+		padding: var(--adaptive-13);
+		border-radius: var(--adaptive-7);
 		background-color: var(--light--dark);
 		@media (hover: hover) {
 			&:hover {
@@ -134,7 +134,7 @@
 	overflow: visible;
 	flex-grow: 1;
 	@media (min-width: $md3+px) {
-		margin-top: 4px;
+		margin-top: var(--adaptive-4);
 		margin-right: 23px;
 		margin-left: 47px;
 	}
@@ -176,8 +176,8 @@
 
 	&__item {
 		width: auto;
-		margin-top: var(--adaptive-3);
-		margin-bottom: var(--adaptive-3);
+		margin-top: var(--adaptive-4);
+		margin-bottom: var(--adaptive-4);
 		&:not(:last-child) {
 			margin-right: var(--adaptive-40);
 		}
@@ -187,7 +187,7 @@
 		transition-duration: var(--transition);
 		color: var(--text-second);
 		$fs: 22;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		&--active {
 			cursor: auto;
 			color: var(--text-main);

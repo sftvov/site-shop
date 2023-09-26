@@ -1,9 +1,5 @@
 @use 'sass:math';
 .card {
-	$fs: 18;
-	font-size: math.div($fs, $fz) + rem;
-	$lh: 22;
-	line-height: math.div($lh, $fs);
 	&__container {
 	}
 
@@ -40,6 +36,10 @@
 
 	&__breadcrumbs {
 		color: var(--text-second);
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 22;
+		line-height: math.div($lh, $fs);
 		display: flex;
 		align-items: center;
 	}
@@ -56,16 +56,16 @@
 			color: var(--main);
 		}
 		&:not(:first-child) {
-			margin-left: var(--adaptive-6);
+			margin-left: var(--adaptive-7);
 			&:before {
 				$fs: 15;
-				font-size: math.div($fs, $fz) + rem;
+				font-size: math.div($fs, $fz) + em;
 				content: '\e911';
 				font-family: 'icons' !important;
 				line-height: 1;
 				vertical-align: bottom;
 				transform: rotate(90deg);
-				margin-right: var(--adaptive-11);
+				margin-right: var(--adaptive-10);
 			}
 		}
 	}
@@ -73,15 +73,19 @@
 	&__title {
 		font-family: 'CoreSansC';
 		$fs: 34;
-		font-size: math.div($fs, $fz) + rem;
+		font-size: math.div($fs, $fz) + em;
 		line-height: 1.4;
 		letter-spacing: 0.68px;
 		text-wrap: balance;
-		margin-top: var(--adaptive-30);
+		margin-top: var(--adaptive-31);
 		margin-bottom: var(--adaptive-31);
 	}
 
 	&__rating {
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 22;
+		line-height: math.div($lh, $fs);
 		display: flex;
 		align-items: center;
 	}
@@ -90,7 +94,7 @@
 		display: flex;
 		align-items: center;
 		column-gap: var(--adaptive-10);
-		margin-right: var(--adaptive-27);
+		margin-right: var(--adaptive-25);
 	}
 
 	&__star {
@@ -98,7 +102,7 @@
 		height: 22px;
 		background-color: var(--light);
 		-webkit-mask-image: url(../img/svg/star.svg);
-		margin-bottom: var(--adaptive-3);
+		margin-bottom: var(--adaptive-4);
 		&--full {
 			background-color: var(--gold);
 		}
@@ -106,7 +110,7 @@
 
 	&__stars-num {
 		color: var(--text-second);
-		margin-left: var(--adaptive-3);
+		margin-left: var(--adaptive-4);
 	}
 
 	&__comment-counts {
@@ -115,20 +119,24 @@
 		align-items: center;
 		&::before {
 			$fs: 22;
-			font-size: math.div($fs, $fz) + rem;
+			font-size: math.div($fs, $fz) + em;
 			margin-right: var(--adaptive-16);
-			margin-bottom: var(--adaptive-3);
+			margin-bottom: var(--adaptive-4);
 		}
 	}
 
 	&__select-characters {
+		$fs: 18;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 22;
+		line-height: math.div($lh, $fs);
 		display: flex;
 		flex-wrap: wrap;
-		@include common-value('margin-top', 35);
+		@include common-value('margin-top', 33);
 	}
 
 	&__character {
-		margin-right: var(--adaptive-20);
+		margin-right: var(--adaptive-19);
 	}
 
 	&__download {
