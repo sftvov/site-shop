@@ -10,7 +10,7 @@
 	&__gallery {
 		display: flex;
 		@include common-value('width', 640);
-		@include common-value('margin-right', 69);
+		margin-right: var(--adaptive-70);
 	}
 
 	&__mini-slider {
@@ -36,10 +36,6 @@
 
 	&__breadcrumbs {
 		color: var(--text-second);
-		$fs: 18;
-		font-size: math.div($fs, $fz) + em;
-		$lh: 22;
-		line-height: math.div($lh, $fs);
 		display: flex;
 		align-items: center;
 	}
@@ -82,10 +78,6 @@
 	}
 
 	&__rating {
-		$fs: 18;
-		font-size: math.div($fs, $fz) + em;
-		$lh: 22;
-		line-height: math.div($lh, $fs);
 		display: flex;
 		align-items: center;
 	}
@@ -126,13 +118,9 @@
 	}
 
 	&__select-characters {
-		$fs: 18;
-		font-size: math.div($fs, $fz) + em;
-		$lh: 22;
-		line-height: math.div($lh, $fs);
 		display: flex;
 		flex-wrap: wrap;
-		@include common-value('margin-top', 33);
+		margin-top: var(--adaptive-34);
 	}
 
 	&__character {

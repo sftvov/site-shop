@@ -101,8 +101,6 @@
 		cursor: pointer;
 		transition-duration: var(--transition);
 		color: var(--dark);
-		$fs: 18;
-		font-size: math.div($fs, $fz) + em;
 		@media (max-width: $md3+px) {
 			font-size: 18px;
 		}
@@ -148,8 +146,10 @@
 	&__card-title {
 		overflow: hidden;
 		text-overflow: ellipsis;
+		$fs: 16;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 19;
-		line-height: math.div($lh, $fz);
+		line-height: math.div($lh, $fs);
 		margin-bottom: var(--adaptive-4);
 	}
 

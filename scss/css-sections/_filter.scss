@@ -1,12 +1,13 @@
 @use 'sass:math';
 .filter {
+	@include common-value('--filter', 295);
 	transition: all var(--transition) ease-in;
 	color: var(--text-second);
 	background-color: var(--white--dark);
 	border-right: 1px solid var(--border);
 	border-left: 1px solid var(--border);
 	@media (min-width: $md3+px) {
-		width: var(--adaptive-295);
+		width: var(--filter);
 	}
 	@media (max-width: $md3+px) {
 		z-index: 2;
@@ -27,10 +28,7 @@
 		align-items: center;
 		justify-content: space-between;
 		width: 100%;
-		padding-top: var(--adaptive-19);
-		padding-right: var(--adaptive-31);
-		padding-bottom: var(--adaptive-19);
-		padding-left: var(--adaptive-31);
+		padding: var(--adaptive-19) var(--adaptive-31);
 		border-bottom: 1px solid var(--border);
 		&:not(:first-child) {
 			@media (hover: hover) {
@@ -69,10 +67,7 @@
 	}
 
 	&__body {
-		padding-top: var(--adaptive-40);
-		@include common-value('padding-right', 24);
-		padding-bottom: var(--adaptive-40);
-		padding-left: var(--adaptive-31);
+		padding: var(--adaptive-40) var(--adaptive-25) var(--adaptive-40) var(--adaptive-31);
 		border-bottom: 1px solid var(--border);
 	}
 
@@ -102,8 +97,10 @@
 
 	&__category-name {
 		transition-duration: var(--transition);
+		$fs: 16;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 19;
-		line-height: math.div($lh, $fz);
+		line-height: math.div($lh, $fs);
 	}
 
 	&__category-icon {
@@ -121,7 +118,7 @@
 		position: relative;
 		width: 100%;
 		height: 15px;
-		@include common-value('margin-bottom', 26);
+		margin-bottom: var(--adaptive-25);
 		background: linear-gradient(90deg, var(--border) var(--start-price), var(--main) var(--start-price) var(--end-price), var(--border) 0) 0 50% / 100% 3px no-repeat;
 	}
 
@@ -156,8 +153,10 @@
 
 	&__price-input {
 		transition-duration: var(--transition);
+		$fs: 16;
+		font-size: math.div($fs, $fz) + em;
 		$lh: 19;
-		line-height: math.div($lh, $fz);
+		line-height: math.div($lh, $fs);
 		text-align: center;
 		width: 97px;
 		height: var(--adaptive-31);
