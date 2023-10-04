@@ -15,6 +15,34 @@ b {
 	font-weight: 700;
 }
 
+._title {
+	font-family: 'CoreSansC';
+}
+
+._ribbon {
+	position: relative;
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: calc(0px - var(--adaptive-22));
+		translate: 0 -50%;
+		width: var(--adaptive-7);
+		height: 83.6%;
+		background-color: var(--main);
+	}
+}
+
+._h2 {
+	$fs: 28;
+	font-size: math.div($fs, $fz) + em;
+	$lh: 31;
+	line-height: math.div($lh, $fs);
+	letter-spacing: 0.56px;
+	margin-top: var(--adaptive-100);
+	margin-bottom: var(--adaptive-31);
+}
+
 // ._h1 {
 // 	$fs: 36;
 // 	font-size: math.div($fs, $fz) + em;
@@ -24,12 +52,15 @@ b {
 // }
 
 ._button {
-	transition: all 0.15s ease;
 	cursor: pointer;
-	padding: var(--adaptive-7) var(--adaptive-7) var(--adaptive-16) var(--adaptive-16);
-	border-radius: 7px;
-	color: #ffffff;
-	background-color: var(--text-main);
+	transition-duration: var(--transition);
+	color: var(--not-white);
+	display: flex;
+	align-items: center;
+	column-gap: var(--adaptive-13);
+	padding: var(--adaptive-13) var(--adaptive-40) var(--adaptive-13) var(--adaptive-40);
+	background-color: var(--main);
+	border-radius: var(--adaptive-7);
 	&:hover:not(:disabled) {
 		box-shadow: -2px 2px 0 #000000;
 		transform: translateX(1px) translateY(-1px);
@@ -37,14 +68,6 @@ b {
 	&:active {
 		box-shadow: 0 0 0 #000000;
 		transform: translateX(0) translateY(0);
-	}
-	&--bright {
-		color: #ffffff;
-		background-color: var(--main);
-		&:hover {
-			color: #ffffff;
-			background-color: var(--hover);
-		}
 	}
 	&:disabled {
 		cursor: not-allowed;

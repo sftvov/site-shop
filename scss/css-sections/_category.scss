@@ -17,25 +17,6 @@
 	margin-top: var(--adaptive-100);
 	padding-left: var(--adaptive-22);
 	&__h2 {
-		font-family: 'CoreSansC';
-		$fs: 28;
-		font-size: math.div($fs, $fz) + em;
-		$lh: 33.5;
-		line-height: math.div($lh, $fs);
-		letter-spacing: 0.56px;
-		position: relative;
-		margin-top: var(--adaptive-100);
-		margin-bottom: var(--adaptive-31);
-		&::before {
-			content: '';
-			position: absolute;
-			top: 50%;
-			@include common-value('left', -21);
-			translate: 0 -50%;
-			width: var(--adaptive-7);
-			height: 83.6%;
-			background-color: var(--main);
-		}
 	}
 	&__h3 {
 		color: var(--text-second);

@@ -24,3 +24,12 @@ const mainSlider = new Swiper('.card__main-slider', {
 		swiper: miniSlider,
 	},
 });
+
+activator('.card__color', {
+	deactivate: false,
+	onlyOne: true,
+});
+activator('.card__size', {
+	deactivate: false,
+	onlyOne: true,
+});

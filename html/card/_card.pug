@@ -7,9 +7,9 @@ section.card._section(id='card')
             .swiper-slide
               img(src="img/minis/mini-1.jpg", alt="")
             .swiper-slide
-              img(src="img/minis/mini-2.jpg", alt="")
-            .swiper-slide
               img(src="img/minis/mini-3.jpg", alt="")
+            .swiper-slide
+              img(src="img/minis/mini-2.jpg", alt="")
             .swiper-slide
               img(src="img/minis/mini-1.jpg", alt="")
             .swiper-slide
@@ -23,9 +23,9 @@ section.card._section(id='card')
             .swiper-slide
               img(src="img/minis/mini-1.jpg", alt="")
             .swiper-slide
-              img(src="img/minis/mini-2.jpg", alt="")
+              img(src="img/products/prodBig-1.jpg", alt="")
             .swiper-slide
-              img(src="img/minis/mini-3.jpg", alt="")
+              img(src="img/minis/mini-2.jpg", alt="")
             .swiper-slide
               img(src="img/minis/mini-1.jpg", alt="")
             .swiper-slide
@@ -57,18 +57,19 @@ section.card._section(id='card')
             span.card__size._active L     
             span.card__size XL
         article.card__select-characters
-          h2.card__character Color Available
+          h2.card__character Colours Available
           .card__change.card__change--color
             span.card__color._active    
             span.card__color    
             span.card__color    
             span.card__color
-        button.card__button
-        span.card__price
+        .card__price-information
+          button.card__button._button._icon-shoppingart Add to cart
+          span.card__price $63.00
         .card__advantages
           .card__advantage
             img.card__advantage-img(src="img/advantages/advan-1.png", alt="")
-            | Secure Payment
+            | Secure payment
           .card__advantage
             img.card__advantage-img(src="img/advantages/advan-3.png", alt="")
             | Size & Fit
@@ -79,23 +80,23 @@ section.card._section(id='card')
             img.card__advantage-img(src="img/advantages/advan-2.png", alt="")
             | Free Shipping & Returns
     .card__description.description
-      .description__title Product Description
-        .description__body
-          .description__main
-            .description__tabs
-              .description__tab Description 
-              .description__tab User comments #[span.description__count.description__count--comments 21]
-              .description__tab Question & Answer #[span.description__count.description__count--questions 4]
-            .description__info
-              .description__text 100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
-              table.description__table.description-table
-                tr.description-table__row
-                  td.description-table__ceil #[span.description-table__title Fabric] Bio-washed Cotton
-                  td.description-table__ceil #[span.description-table__title Pattern] Printed
-                  td.description-table__ceil #[span.description-table__title Fit] Regular-fit
-                tr.description-table__row
-                  td.description-table__ceil #[span.description-table__title Neck] Round Neck
-                  td.description-table__ceil #[span.description-table__title Sleeve] Half-sleeves
-                  td.description-table__ceil #[span.description-table__title Style] Casual Wear
-          .description__video-wrapper
-            img.description__video(src="img/video.jpg")
+      .description__title._title._ribbon._h2 Product Description
+      .description__body
+        .description__main
+          .description__tabs
+            .description__tab._active Description 
+            .description__tab User comments #[span.description__count.description__count--comments 21]
+            .description__tab Question & Answer #[span.description__count.description__count--questions 4]
+          .description__info
+            .description__text 100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
+            table.description__table.description-table
+              tr.description-table__row
+                td.description-table__ceil #[span.description-table__title Fabric] Bio-washed Cotton
+                td.description-table__ceil #[span.description-table__title Pattern] Printed
+                td.description-table__ceil #[span.description-table__title Fit] Regular-fit
+              tr.description-table__row
+                td.description-table__ceil #[span.description-table__title Neck] Round Neck
+                td.description-table__ceil #[span.description-table__title Sleeve] Half-sleeves
+                td.description-table__ceil #[span.description-table__title Style] Casual Wear
+        .description__video-wrapper
+          img.description__video(src="img/video.jpg")

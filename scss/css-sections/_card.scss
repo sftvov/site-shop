@@ -1,5 +1,6 @@
 @use 'sass:math';
 .card {
+	@include common-value('--left-block', 640);
 	&__container {
 	}
 
@@ -9,24 +10,33 @@
 
 	&__gallery {
 		display: flex;
-		@include common-value('width', 640);
-		margin-right: var(--adaptive-70);
+		align-items: center;
+		width: 51%;
+		margin-right: 6%;
 	}
 
 	&__mini-slider {
 		flex-shrink: 0;
-		flex-basis: 200px;
-		height: 785px;
+		@include common-value('flex-basis', 66);
+		height: 257px;
+		margin-right: var(--adaptive-37);
+		margin-left: var(--adaptive-4);
+		margin-bottom: 80px;
 		& img {
-			height: 100%;
 			width: 100%;
+			aspect-ratio: 1;
+			object-fit: cover;
+		}
+		& .swiper-slide {
 		}
 	}
 
 	&__main-slider {
+		height: 785px;
 		& img {
 			height: 100%;
 			width: 100%;
+			object-fit: cover;
 		}
 	}
 
@@ -90,10 +100,12 @@
 	}
 
 	&__star {
-		width: 22px;
-		height: 22px;
+		width: var(--adaptive-22);
+		height: var(--adaptive-22);
 		background-color: var(--light);
 		-webkit-mask-image: url(../img/svg/star.svg);
+		-webkit-mask-size: contain;
+		-webkit-mask-repeat: no-repeat;
 		margin-bottom: var(--adaptive-4);
 		&--full {
 			background-color: var(--gold);
@@ -102,11 +114,13 @@
 
 	&__stars-num {
 		color: var(--text-second);
+		font-weight: 500;
 		margin-left: var(--adaptive-4);
 	}
 
 	&__comment-counts {
 		color: var(--text-second);
+		font-weight: 500;
 		display: flex;
 		align-items: center;
 		&::before {
@@ -121,6 +135,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		margin-top: var(--adaptive-34);
+		margin-bottom: var(--adaptive-40);
 	}
 
 	&__character {
@@ -128,50 +143,102 @@
 	}
 
 	&__download {
+		color: var(--text-second);
+		font-weight: 500;
 	}
 
 	&__change {
 		display: flex;
 		flex-basis: 100%;
+		align-items: center;
 		&--size {
+			margin-top: var(--adaptive-22);
+			column-gap: var(--adaptive-25);
 		}
 
 		&--color {
+			margin-top: var(--adaptive-28);
+			column-gap: var(--adaptive-22);
 		}
 	}
 
 	&__size {
+		transition-duration: var(--transition);
+		$fs: 14;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 17;
+		line-height: math.div($lh, $fs);
+		font-weight: 500;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		border: var(--adaptive-1) solid var(--dark--light);
 		width: var(--adaptive-37);
 		height: var(--adaptive-37);
+		border: var(--adaptive-1) solid var(--light);
+		border-radius: var(--adaptive-13);
+		&._active {
+			color: var(--light--dark);
+			background-color: var(--dark--light);
+			border-color: var(--dark--light);
+		}
 	}
 
 	&__color {
+		transition-duration: var(--transition);
+		width: var(--adaptive-22);
+		height: var(--adaptive-22);
+		background-color: var(--dark--light);
+		border-radius: 50%;
+		&._active {
+			box-shadow: var(--light--dark) 0 0 0 3px, var(--dark--light) 0 0 0 4px;
+		}
+	}
+
+	&__price-information {
+		display: flex;
+		column-gap: var(--adaptive-25);
 	}
 
 	&__button {
+		&::before {
+			// margin-bottom: var(--adaptive-4);
+		}
 	}
 
 	&__price {
+		font-weight: 700;
+		padding: var(--adaptive-13) var(--adaptive-40) var(--adaptive-13) var(--adaptive-40);
+		border: var(--adaptive-1) solid var(--dark--light);
+		border-radius: var(--adaptive-7);
 	}
 
 	&__advantages {
+		display: grid;
+		grid-template: 1fr 1fr/1fr 1fr;
+		column-gap: var(--adaptive-34);
+		row-gap: var(--adaptive-25);
+		margin-top: var(--adaptive-34);
+		padding-top: var(--adaptive-40);
+		border-top: var(--adaptive-1) solid var(--light);
 	}
 
 	&__advantage {
+		font-weight: 500;
+		display: flex;
+		align-items: center;
 	}
 
 	&__advantage-img {
+		margin-right: var(--adaptive-16);
 	}
 
 	&__description {
 	}
 }
 .description {
+	margin-top: var(--adaptive-100);
 	&__title {
+		margin-left: var(--adaptive-22);
 	}
 
 	&__body {
@@ -182,42 +249,103 @@
 	}
 
 	&__tabs {
+		display: flex;
+		column-gap: var(--adaptive-31);
 	}
 
 	&__tab {
+		font-weight: 400;
+		display: flex;
+		align-items: center;
+		&._active {
+			font-weight: 500;
+		}
+		&:not(._active) {
+			color: var(--text-second);
+		}
 	}
 
 	&__count {
-	}
+		color: var(--not-white);
+		$fs: 10;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 12;
+		line-height: math.div($lh, $fs);
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: var(--adaptive-19);
+		height: var(--adaptive-19);
+		margin-right: var(--adaptive-4);
+		margin-left: var(--adaptive-16);
+		border-radius: var(--adaptive-4);
+		&--comments {
+			background-color: var(--main);
+		}
 
-	&__count--comments {
-	}
-
-	&__count--questions {
+		&--questions {
+			background-color: var(--dark--black);
+		}
 	}
 
 	&__info {
+		margin-top: var(--adaptive-49);
 	}
 
 	&__text {
+		color: var(--text-second);
+		$fs: 16;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 25;
+		line-height: math.div($lh, $fs);
+		font-weight: 400;
+		letter-spacing: 0.32px;
+		padding-right: var(--adaptive-4);
 	}
 
 	&__table {
 	}
 
 	&__video-wrapper {
+		width: 43%;
+		margin-top: calc(0px - var(--adaptive-16));
+		margin-left: 6%;
 	}
 
 	&__video {
+		border-radius: var(--adaptive-13);
 	}
 }
 .description-table {
+	margin-top: var(--adaptive-19);
+	padding: var(--adaptive-7) 0;
+	background-color: var(--light--black);
+	border-spacing: 0;
+	border-radius: var(--adaptive-13);
 	&__row {
+		&:not(:last-child) .description-table__ceil {
+			border-bottom: var(--adaptive-1) solid var(--light);
+		}
 	}
 
 	&__ceil {
+		$fs: 16;
+		font-size: math.div($fs, $fz) + em;
+		$lh: 16;
+		line-height: math.div($lh, $fs);
+		font-weight: 500;
+		vertical-align: top;
+		padding: var(--adaptive-25) var(--adaptive-49);
+		&:not(:last-child) {
+			border-right: var(--adaptive-1) solid var(--light);
+		}
 	}
 
 	&__title {
+		color: var(--text-second);
+		font-weight: 400;
+		display: block;
+		margin-bottom: var(--adaptive-13);
 	}
 }
