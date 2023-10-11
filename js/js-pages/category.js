@@ -19,7 +19,6 @@ activator('.filter-button',{
 
 activator('.filter__color-item', {});
 activator('.filter__size', {});
-activator('.goods__icon-favorite', {});
 activator('.goods__filter', {
 	deactivate: false,
 	onlyOne: true,

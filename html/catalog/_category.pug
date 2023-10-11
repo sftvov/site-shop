@@ -1,20 +1,4 @@
--
-	const table = [
-	["Women's Clothing", 'Best Price'],
-	['Pick Any 4- Womens Plain T-shirt Combo', '₹1099'],
-	['Pick Any 4- Plain Womens Boxer Combo', '₹1099'],
-	['Pick Any 4 - Women Plain Full Sleeve T-shirt Combo', '₹1399'],
-	['Multicolor Checkered Long Casual Shirts for Women', '₹499'],
-	['Pick Any 2: Plain Boxy Casual Shirts for Women Combo', '₹799'],
-	['Blue Floral Anarkali Kurti', '₹599'],
-	['Jade Black Narrow Cut Flexible Women Jeggings', '₹998'],
-	['Mustard-yellow Solid Straight-Fit Women Pant', '₹499'],
-	['Women Pants Combo - Pick Any 2', '₹800'],
-	['Pista Green Solid Boxy Casual Shirts for Women', '₹449'],
-	['Plain Burgundy Womens Boxer', '₹349'],
-	['Striped Front Tie Casual Shirts for Women', '₹449'],
-	];
-
+include ../_bd.pug
 
 .category
 	.category__container._container
@@ -32,28 +16,29 @@
 			p.description__p Our collection of clothes for women will make you the trendsetter with an iconic resemblance of choice in Womens Wear. It is quite evident to say that there are very few Womens Clothing online stores where you can buy Western Wear for Women comprising the premium material and elegant design that you are always seeking for. Basically, 
 			a.description__see-more-link(href="/") See More
 			h2.description__h2 Buy Women's Clothing at Best Price
-			table.description__table
-				-
-					let tableCounter = 0;
-				each tr in table
-					tr.description__tr
+			section._section
+				table.description__table
 					-
-						let trCounter = 0;					
-					each td in tr
+						let tableCounter = 0;
+					each tr in table
+						tr.description__tr
 						-
-							let tdthTag = 'td';
-							let tdClass = 'description__td';
-							if(tr === table[0]) {
-								tdthTag = 'th'
-								tdClass = 'description__th';
-								} else if (tr === table[1]) {
-									tdClass+= ' description__td--under-th';
-								} else if (tr === table[table.length - 1]) {
-									tdClass+= ' description__td--last-row';
-								};
-							if(trCounter === 0 ) tdClass+= ' description__' + tdthTag + '--first-element';
-						#{tdthTag}(class=tdClass) #{td}
+							let trCounter = 0;					
+						each td in tr
+							-
+								let tdthTag = 'td';
+								let tdClass = 'description__td';
+								if(tr === table[0]) {
+									tdthTag = 'th'
+									tdClass = 'description__th';
+									} else if (tr === table[1]) {
+										tdClass+= ' description__td--under-th';
+									} else if (tr === table[table.length - 1]) {
+										tdClass+= ' description__td--last-row';
+									};
+								if(trCounter === 0 ) tdClass+= ' description__' + tdthTag + '--first-element';
+							#{tdthTag}(class=tdClass) #{td}
+							-
+								trCounter++
 						-
-							trCounter++
-					-
-						tableCounter++;
+							tableCounter++;

@@ -119,3 +119,6 @@ const headerCategoriesSlider = new Swiper('.menu', {
 // 	addTouchClassForMobile();
 // 	console.log(typeof(header));
 // }
+
+
+activator('.goods__icon-favorite', {});

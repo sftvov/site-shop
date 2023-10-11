@@ -19,6 +19,10 @@ b {
 	font-family: 'CoreSansC';
 }
 
+._title-offset {
+	margin-left: var(--adaptive-22);
+}
+
 ._ribbon {
 	position: relative;
 	&::before {
@@ -30,6 +34,7 @@ b {
 		width: var(--adaptive-7);
 		height: 83.6%;
 		background-color: var(--main);
+		border-radius: var(--adaptive-7);
 	}
 }
 
@@ -39,7 +44,7 @@ b {
 	$lh: 31;
 	line-height: math.div($lh, $fs);
 	letter-spacing: 0.56px;
-	margin-top: var(--adaptive-100);
+	margin-top: var(--adaptive-85);
 	margin-bottom: var(--adaptive-31);
 }
 

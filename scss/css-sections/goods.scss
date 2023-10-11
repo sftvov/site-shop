@@ -186,12 +186,14 @@
 	}
 
 	&__card-price {
+		color: var(--dark);
 		$fs: 14;
 		font-size: math.div($fs, $fz) + em;
 		$lh: 17;
 		line-height: math.div($lh, $fs);
 		font-weight: 700;
 		padding: var(--adaptive-10) var(--adaptive-19) var(--adaptive-10) var(--adaptive-19);
-		background-color: var(--gray--light);
+		background-color: var(--light);
+		border-radius: var(--adaptive-7);
 	}
 }

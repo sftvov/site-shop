@@ -1,6 +1,7 @@
+include ../_bd.pug
 section.card._section(id='card')
   .card__container._container
-    .card__top
+    .card__body
       .card__gallery
         .card__mini-slider.mini-slider.swiper
           .swiper-wrapper
@@ -16,27 +17,28 @@ section.card._section(id='card')
               img(src="img/minis/mini-2.jpg", alt="")
             .swiper-slide
               img(src="img/minis/mini-3.jpg", alt="")
-          .mini-slider__prev.swiper-button-prev
-          .mini-slider__next.swiper-button-next
-        .card__main-slider.swiper
+          .mini-slider__navigation
+            .mini-slider__prev._icon-chevron
+            .mini-slider__next._icon-chevron
+        .card__main-slider.main-slider.swiper
           .swiper-wrapper
-            .swiper-slide
+            .swiper-slide.main-slider__slide
               img(src="img/minis/mini-1.jpg", alt="")
-            .swiper-slide
+            .swiper-slide.main-slider__slide
               img(src="img/products/prodBig-1.jpg", alt="")
-            .swiper-slide
+            .swiper-slide.main-slider__slide
               img(src="img/minis/mini-2.jpg", alt="")
-            .swiper-slide
+            .swiper-slide.main-slider__slide
               img(src="img/minis/mini-1.jpg", alt="")
-            .swiper-slide
+            .swiper-slide.main-slider__slide
               img(src="img/minis/mini-2.jpg", alt="")
-            .swiper-slide
+            .swiper-slide.main-slider__slide
               img(src="img/minis/mini-3.jpg", alt="")        
+      .card__breadcrumbs._gray-standart-text
+        a(href="/").card__bread Shop
+        a(href="/").card__bread Women
+        a(href="/").card__bread Top
       .card__info
-        .card__breadcrumbs._gray-standart-text
-          a(href="/").card__bread Shop
-          a(href="/").card__bread Women
-          a(href="/").card__bread Top
         h1.card__title Raven Hoodie With Black colored Design
         .card__rating
           .card__stars
@@ -79,24 +81,42 @@ section.card._section(id='card')
           .card__advantage
             img.card__advantage-img(src="img/advantages/advan-2.png", alt="")
             | Free Shipping & Returns
-    .card__description.description
-      .description__title._title._ribbon._h2 Product Description
-      .description__body
-        .description__main
-          .description__tabs
-            .description__tab._active Description 
-            .description__tab User comments #[span.description__count.description__count--comments 21]
-            .description__tab Question & Answer #[span.description__count.description__count--questions 4]
-          .description__info
-            .description__text 100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
-            table.description__table.description-table
-              tr.description-table__row
-                td.description-table__ceil #[span.description-table__title Fabric] Bio-washed Cotton
-                td.description-table__ceil #[span.description-table__title Pattern] Printed
-                td.description-table__ceil #[span.description-table__title Fit] Regular-fit
-              tr.description-table__row
-                td.description-table__ceil #[span.description-table__title Neck] Round Neck
-                td.description-table__ceil #[span.description-table__title Sleeve] Half-sleeves
-                td.description-table__ceil #[span.description-table__title Style] Casual Wear
-        .description__video-wrapper
-          img.description__video(src="img/video.jpg")
+      .card__subtitle._title._h2._ribbon._title-offset Product Description
+      .card__description.description
+        .description__tabs
+          .description__tab._active Description 
+          .description__tab User comments #[span.description__count.description__count--comments 21]
+          .description__tab Question & Answer #[span.description__count.description__count--questions 4]
+        .description__info
+          .description__text 100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
+          table.description__table.description-table
+            tr.description-table__row
+              td.description-table__ceil #[span.description-table__title Fabric] Bio-washed Cotton
+              td.description-table__ceil #[span.description-table__title Pattern] Printed
+              td.description-table__ceil #[span.description-table__title Fit] Regular-fit
+            tr.description-table__row
+              td.description-table__ceil #[span.description-table__title Neck] Round Neck
+              td.description-table__ceil #[span.description-table__title Sleeve] Half-sleeves
+              td.description-table__ceil #[span.description-table__title Style] Casual Wear
+      .card__video-wrapper
+        img.card__video(src="img/video.jpg")
+    -  
+      n = 0;
+    .card__goods.goods
+      h2.goods__title._title._h2._ribbon._title-offset Similar Products
+      .goods__grid
+        each good in goods
+          if n < 8
+            if (good.sex === 'w')
+              article.goods__card
+                .goods__card-image
+                  button.goods__icon-favorite._icon-heart(aria-label='add ' + good.name + ' to favorite')
+                  img.goods__card-img(src=good.img alt=good.name)
+                .goods__card-bottom
+                  .goods__card-text
+                    h2.goods__card-title
+                      a.goods__card-link(href='/') #{good.name}
+                    p.goods__card-brand #{good.brand}
+                  .goods__card-price $#{good.price}        
+              -
+                n++;
