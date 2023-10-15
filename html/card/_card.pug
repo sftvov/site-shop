@@ -48,16 +48,16 @@ section.card._section(id='card')
             .card__star(style="background: linear-gradient(90deg, var(--gold) 50%,  var(--light) 0)")
             .card__star
             .card__stars-num 3.5
-          .card__comment-counts._icon-message 120 comments
+          a.card__comment-counts._icon-message(href='#comments-tab') 120 comments
         article.card__select-characters
           h2.card__character Select Size
           a.card__download Size Guide
           .card__change.card__change--size
-            span.card__size XS      
-            span.card__size S     
-            span.card__size M     
-            span.card__size._active L     
-            span.card__size XL
+            button.card__size XS      
+            button.card__size S     
+            button.card__size M     
+            button.card__size._active L     
+            button.card__size XL
         article.card__select-characters
           h2.card__character Colours Available
           .card__change.card__change--color
@@ -82,18 +82,33 @@ section.card._section(id='card')
             img.card__advantage-img(src="img/advantages/advan-2.png", alt="")
             | Free Shipping & Returns
       .card__subtitle._title._h2._ribbon._title-offset Product Description
-      .card__description.description
+      .card__description.description._tabs
         .description__tabs
-          .description__tab._active Description 
-          .description__tab User comments #[span.description__count.description__count--comments 21]
-          .description__tab Question & Answer #[span.description__count.description__count--questions 4]
-        .description__info
+          .description__tab._tabs-title._active Description 
+          #comments-tab.description__tab._tabs-title(data-tab-link=".card__comment-counts") User comments #[span.description__count.description__count--comments 21]
+          .description__tab._tabs-title Question & Answer #[span.description__count.description__count--questions 4]
+          ._tabs-indicator
+        .description__info._tabs-block._active
           .description__text 100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
           table.description__table.description-table
             tr.description-table__row
               td.description-table__ceil #[span.description-table__title Fabric] Bio-washed Cotton
               td.description-table__ceil #[span.description-table__title Pattern] Printed
               td.description-table__ceil #[span.description-table__title Fit] Regular-fit
+            tr.description-table__row
+              td.description-table__ceil #[span.description-table__title Neck] Round Neck
+              td.description-table__ceil #[span.description-table__title Sleeve] Half-sleeves
+              td.description-table__ceil #[span.description-table__title Style] Casual Wear
+        .description__info._tabs-block
+          .description__text 100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
+          table.description__table.description-table
+            tr.description-table__row
+              td.description-table__ceil #[span.description-table__title Fabric] Bio-washed Cotton
+              td.description-table__ceil #[span.description-table__title Pattern] Printed
+              td.description-table__ceil #[span.description-table__title Fit] Regular-fit
+        .description__info._tabs-block
+          .description__text 100% Bio-washed Cotton – makes the fabric extra soft & silky. Flexible ribbed crew neck. Precisely stitched with no pilling & no fading. Provide all-time comfort. Anytime, anywhere. Infinite range of matte-finish HD prints.
+          table.description__table.description-table
             tr.description-table__row
               td.description-table__ceil #[span.description-table__title Neck] Round Neck
               td.description-table__ceil #[span.description-table__title Sleeve] Half-sleeves

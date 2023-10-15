@@ -1,4 +1,5 @@
 const miniSlider = new Swiper('.card__mini-slider', {
+	enabled: false,
 	direction: 'vertical',
 	observer: true,
 	observeParents: true,
@@ -11,6 +12,14 @@ const miniSlider = new Swiper('.card__mini-slider', {
 		nextEl: '.mini-slider__next',
 		prevEl: '.mini-slider__prev',
 	},
+	breakpoints: {
+		[md4]: {
+			enabled: true,
+		},
+	},
+	a11y: {
+		enabled: false,
+	},
 });
 
 const mainSlider = new Swiper('.card__main-slider', {
@@ -20,8 +29,12 @@ const mainSlider = new Swiper('.card__main-slider', {
 	simulateTouch: true,
 	speed: 800,
 	initialSlide: 1,
+	spaceBetween: 5,
 	thumbs: {
 		swiper: miniSlider,
+	},
+	keyboard: {
+		enabled: true,
 	},
 });
 
@@ -33,3 +46,9 @@ activator('.card__size', {
 	deactivate: false,
 	onlyOne: true,
 });
+activator('.card__advantage', {
+	removed: ['.goods__card', '.description__table'],
+	removing: ['.card__subtitle'],
+});
+
+@@include('../../../../src/js-elements/tabs.js');
