@@ -1,4 +1,5 @@
 [class*='_icon-']:before,
+[class*='_icon-']:after,
 [class*='_icon-'] .path1:before,
 [class*='_icon-'] .path2:before,
 [class*='_icon-'] .path3:before,
@@ -77,6 +78,9 @@
 	content: '\e911';
 }
 ._icon-arrow:before {
+	content: '\e912';
+}
+._icon-arrow-a:after {
 	content: '\e912';
 }
 ._icon-lock-3 .path1:before {

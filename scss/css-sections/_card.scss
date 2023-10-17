@@ -133,8 +133,9 @@
 
 	&__select-characters {
 		display: flex;
+		align-items: center;
 		flex-wrap: wrap;
-		margin-top: var(--adaptive-34);
+		margin-top: var(--adaptive-31);
 		margin-bottom: var(--adaptive-40);
 	}
 
@@ -145,6 +146,14 @@
 	&__download {
 		color: var(--text-second);
 		font-weight: 500;
+		display: flex;
+		align-items: center;
+		&::after {
+			$fs: 22;
+			font-size: math.div($fs, $fz) + em;
+			margin-left: var(--adaptive-13);
+			margin-bottom: var(--adaptive-4);
+		}
 	}
 
 	&__change {
@@ -198,6 +207,15 @@
 		height: var(--adaptive-22);
 		background-color: var(--dark--light);
 		border-radius: 50%;
+		@media (hover: hover) {
+			&:hover {
+				transform: scale(1.2);
+			}
+		}
+		&:active,
+		&:focus-visible {
+			transform: scale(1.2);
+		}
 		&._active {
 			box-shadow: var(--light--dark) 0 0 0 3px, var(--dark--light) 0 0 0 4px;
 		}
@@ -254,7 +272,8 @@
 
 	&__video-wrapper {
 		@media (min-width: $md4+px) {
-			margin-top: calc(0px - var(--adaptive-16));
+			// margin-top: calc(0px - var(--adaptive-16));
+			margin-top: var(--adaptive-10);
 		}
 		@media (max-width: $md4+px) {
 			grid-column: span 2;
@@ -285,21 +304,30 @@
 		position: absolute;
 		height: 2px;
 		width: var(--adaptive-43);
-		background-color: #fff;
+		background-color: var(--dark--light);
 		bottom: calc(0px - var(--adaptive-16));
 	}
 
 	&__tab {
+		color: var(--text-second);
 		transition-duration: var(--transition);
 		font-weight: 400;
 		display: flex;
 		align-items: center;
 		padding-top: var(--adaptive-25);
-		&._active {
+		@media (hover: hover) {
+			&:hover {
+				color: var(--dark--light);
+				font-weight: 500;
+			}
+		}
+		&:active,
+		&:focus-visible {
+			color: var(--dark--light);
 			font-weight: 500;
 		}
-		&:not(._active) {
-			color: var(--text-second);
+		&._active {
+			font-weight: 500;
 		}
 	}
 

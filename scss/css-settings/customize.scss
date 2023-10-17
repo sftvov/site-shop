@@ -66,16 +66,24 @@ b {
 	padding: var(--adaptive-13) var(--adaptive-40) var(--adaptive-13) var(--adaptive-40);
 	background-color: var(--main);
 	border-radius: var(--adaptive-7);
-	&:hover:not(:disabled) {
-		box-shadow: -2px 2px 0 #000000;
+	@media (hover: hover) {
+		&:hover {
+			transform: translateX(1px) translateY(-1px);
+			box-shadow: -2px 2px 0 #000000;
+		}
+	}
+	&:focus-visible {
 		transform: translateX(1px) translateY(-1px);
+		box-shadow: -2px 2px 0 #000000;
 	}
 	&:active {
-		box-shadow: 0 0 0 #000000;
 		transform: translateX(0) translateY(0);
+		box-shadow: 0 0 6px #000000 inset;
 	}
 	&:disabled {
 		cursor: not-allowed;
+		transform: translateX(0) translateY(0);
+		box-shadow: 0 0 0 #000000;
 		opacity: 0.5;
 	}
 }
