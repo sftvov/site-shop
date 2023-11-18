@@ -4,9 +4,9 @@ const page = document.querySelector('.page');
 const header = document.querySelector('.header');
 const footer = document.querySelector('.footer');
 
-const header__logoLink = document.querySelector('.header__logo-link');
-const header__searchWrapper = document.querySelector('.header__search-wrapper');
-const header__searchInput = document.querySelector('.header__search-input');
+const header__logoLink = document.querySelector('.header__logo');
+const header__searchWrapper = document.querySelector('.header-search');
+const headerSearch__input = document.querySelector('.header-search__input');
 const header__iconSearch = document.querySelector('.header__icon--search');
 const header__icons = document.querySelectorAll('.header__icon');
 const header__lastIcon = header__icons[header__icons.length - 1];
@@ -45,7 +45,7 @@ const md5 = getComputedStyle(document.documentElement)
 // ----------------------------------------------------------------------
 
 activator('.header__icon--search',{ 
-	removed: ['.header__search-wrapper'], 
+	removed: ['.header-search'], 
 	effects: ['U'],
 	effectDuration: 300,
 	// bodyLock: true,
@@ -55,7 +55,7 @@ activator('.header__icon--search',{
 	clickOutClose: true,
 	escClose: true,
 	// inert: [header, footer, filter, description],
-	focus: header__searchInput,
+	focus: headerSearch__input,
 });
 
 const headerCategoriesSlider = new Swiper('.menu', {

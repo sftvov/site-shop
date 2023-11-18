@@ -1,4 +1,4 @@
-export const font_names = '{Gilroy,CoreSansC,Causten,Mintaka}';
+export const font_names = '{Gilroy,CoreSansC,Mintaka}';
 
 const maxWidth = 2560;
 const maxContainer = 1920;
