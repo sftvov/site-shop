@@ -134,9 +134,7 @@
 		}
 
 		& > .menu-item-has-children {
-			&:not(:last-child) {
-				margin-right: var(--adaptive-31);
-			}
+			padding-right: var(--adaptive-40);
 
 			& > .sub-menu {
 				min-width: 100%;
@@ -152,7 +150,10 @@
 		display: flex;
 		align-items: center;
 		width: auto;
-		padding: var(--adaptive-10) var(--adaptive-40) var(--adaptive-10) var(--adaptive-10);
+		padding: var(--adaptive-10);
+		// &:not(:last-child) {
+		padding-right: var(--adaptive-25);
+		// }
 	}
 
 	&__link {
@@ -294,7 +295,7 @@
 		row-gap: var(--adaptive-1);
 		width: 100%;
 		border-radius: var(--adaptive-7);
-		background-color: var(--dark);
+		background-color: var(--light-dark);
 	}
 	&__item-link {
 		$fs: 14;
@@ -366,6 +367,7 @@
 
 .current-product_cat-ancestor,
 .current-product-ancestor,
+.current-menu-ancestor,
 .current-menu-item {
 	color: var(--text-main);
 	&::after {
