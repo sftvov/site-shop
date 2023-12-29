@@ -171,59 +171,56 @@
 			column-gap: var(--adaptive-22);
 		}
 	}
+	MY-S &__change-button {
+		transition-duration: var(--transition);
+		&--size {
+			$fs: 14;
+			font-size: math.div($fs, $fz) + em;
+			$lh: 17;
+			line-height: math.div($lh, $fs);
+			font-weight: 500;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: var(--adaptive-37);
+			height: var(--adaptive-37);
+			border: var(--adaptive-1) solid var(--light);
+			border-radius: var(--adaptive-13);
+			@media (hover: hover) {
+				&:hover {
+					box-shadow: var(--dark--light) 0 0 0 1px;
+				}
+			}
+			&:focus-visible {
+				box-shadow: var(--dark--light) 0 0 0 1px;
+			}
+			&._active {
+				color: var(--light--dark);
+				background-color: var(--dark--light);
+				border-color: var(--dark);
+			}
+		}
 
-	// &__change-button {
-	// 	transition-duration: var(--transition);
-	// 	&--size {
-	// 		$fs: 14;
-	// 		font-size: math.div($fs, $fz) + em;
-	// 		$lh: 17;
-	// 		line-height: math.div($lh, $fs);
-	// 		font-weight: 500;
-	// 		display: flex;
-	// 		align-items: center;
-	// 		justify-content: center;
-	// 		width: var(--adaptive-37);
-	// 		height: var(--adaptive-37);
-	// 		border: var(--adaptive-1) solid var(--light);
-	// 		border-radius: var(--adaptive-13);
-	// 		@media (hover: hover) {
-	// 			&:hover {
-	// 				box-shadow: var(--dark--light) 0 0 0 1px;
-	// 			}
-	// 		}
-	// 		&:focus-visible {
-	// 			box-shadow: var(--dark--light) 0 0 0 1px;
-	// 		}
-	// 		&._active {
-	// 			color: var(--light--dark);
-	// 			background-color: var(--dark--light);
-	// 			border-color: var(--dark);
-	// 		}
-	// 	}
-
-	// 	&--color {
-	// 		width: var(--adaptive-22);
-	// 		height: var(--adaptive-22);
-	// 		background-color: var(--dark--light);
-	// 		border-radius: 50%;
-	// 		@media (hover: hover) {
-	// 			&:hover {
-	// 				transform: scale(1.2);
-	// 			}
-	// 		}
-	// 		&:active,
-	// 		&:focus-visible {
-	// 			transform: scale(1.2);
-	// 		}
-	// 		&._active {
-	// 			box-shadow: var(--light--dark) 0 0 0 3px, var(--dark--light) 0 0 0 4px;
-	// 		}
-	// 	}
-	// }
-
-	//for WP:
-	&__change-button {
+		&--color {
+			width: var(--adaptive-22);
+			height: var(--adaptive-22);
+			background-color: var(--dark--light);
+			border-radius: 50%;
+			@media (hover: hover) {
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+			&:active,
+			&:focus-visible {
+				transform: scale(1.2);
+			}
+			&._active {
+				box-shadow: var(--light--dark) 0 0 0 3px, var(--dark--light) 0 0 0 4px;
+			}
+		}
+	}
+	MY-F WP-S &__change-button {
 		&--size {
 			$fs: 14;
 			$lh: 17;
@@ -253,8 +250,7 @@
 			}
 		}
 	}
-
-	&__price-information {
+	WP-F &__price-information {
 		display: flex;
 		column-gap: var(--adaptive-25);
 	}
