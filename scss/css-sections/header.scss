@@ -315,6 +315,8 @@
 	}
 }
 
+//WP STYLES:
+
 .menu-item-has-children {
 	&:hover,
 	&:has(.menu__link:focus-visible) {
@@ -365,6 +367,7 @@
 	}
 }
 
+// ._active,
 .current-product_cat-ancestor,
 .current-product-ancestor,
 .current-menu-ancestor,

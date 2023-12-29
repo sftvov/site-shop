@@ -27,11 +27,11 @@ const md5 = getComputedStyle(document.documentElement)
 // ----------------------------------------------------------------------
 
 // include('../../../src/functions/sendmail.js');
-@@include('../../../src/functions/isMobile.js');
-@@include('../../../src/functions/webp.js');
+// include('../../../src/functions/isMobile.js');
+// include('../../../src/functions/webp.js');
 @@include('../../../src/functions/slide.js');
-@@include('../../../src/functions/activator.js');
-@@include('../../../src/functions/body_lock.js');
+// include('../../../src/functions/activator.js');
+// include('../../../src/functions/body_lock.js');
 @@include('../../../src/functions/dynamic_adapt.js');
 // include('../../../src/js-elements/search.js');
 // include('../../../src/js-elements/tabs.js');
@@ -44,19 +44,19 @@ const md5 = getComputedStyle(document.documentElement)
 
 // ----------------------------------------------------------------------
 
-activator('.header__icon--search',{ 
-	removed: ['.header-search'], 
-	effects: ['U'],
-	effectDuration: 300,
-	// bodyLock: true,
-	removing: ['.goods__filter'],
-	// deactivate: false,
-	// onlyOne: true,
-	clickOutClose: true,
-	escClose: true,
-	// inert: [header, footer, filter, description],
-	focus: headerSearch__input,
-});
+// activator('.header__icon--search',{ 
+// 	removed: ['.header-search'], 
+// 	effects: ['U'],
+// 	effectDuration: 300,
+// 	// bodyLock: true,
+// 	removing: ['.goods__filter'],
+// 	// deactivate: false,
+// 	// onlyOne: true,
+// 	clickOutClose: true,
+// 	escClose: true,
+// 	// inert: [header, footer, filter, description],
+// 	focus: headerSearch__input,
+// });
 
 const headerCategoriesSlider = new Swiper('.menu', {
 	// direction: 'vertical',
@@ -121,4 +121,4 @@ const headerCategoriesSlider = new Swiper('.menu', {
 // }
 
 
-activator('.goods__icon-favorite', {});
+// activator('.goods__icon-favorite', {});

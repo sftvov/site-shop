@@ -38,17 +38,17 @@ const mainSlider = new Swiper('.card__main-slider', {
 	},
 });
 
-activator('.card__color', {
-	deactivate: false,
-	onlyOne: true,
-});
-activator('.card__size', {
-	deactivate: false,
-	onlyOne: true,
-});
-activator('.card__advantage', {
-	removed: ['.goods__card', '.description__table'],
-	removing: ['.card__subtitle'],
-});
+// activator('.card__color', {
+// 	deactivate: false,
+// 	onlyOne: true,
+// });
+// activator('.card__size', {
+// 	deactivate: false,
+// 	onlyOne: true,
+// });
+// activator('.card__advantage', {
+// 	removed: ['.goods__card', '.description__table'],
+// 	removing: ['.card__subtitle'],
+// });
 
 @@include('../../../../src/js-elements/tabs.js');
