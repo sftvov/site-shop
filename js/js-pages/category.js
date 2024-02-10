@@ -9,17 +9,17 @@ const description = document.querySelector('.description');
 @@include('../elements/priceSliders.js');
 
 
-// activator('.filter-button',{ 
-// 	removed: ['.filter'], 
-// 	bodyLock: true,
-// 	escClose: true,
-// 	inert: [header, footer, goods, description],
-// 	focus: filter__firstCategoryLink,   
-// });
+activator('.filter-button',{ 
+	removed: ['.filter'], 
+	bodyLock: true,
+	escClose: true,
+	inert: [header, footer, goods, description],
+	focus: filter__firstCategoryLink,   
+});
 
-// activator('.filter__color-item', {});
-// activator('.filter__size', {});
-// activator('.goods__filter', {
-// 	deactivate: false,
-// 	onlyOne: true,
-// });
+activator('.filter__color-item', {});
+activator('.filter__size', {});
+activator('.goods__filter', {
+	deactivate: false,
+	onlyOne: true,
+});

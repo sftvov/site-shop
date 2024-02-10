@@ -171,7 +171,8 @@
 			column-gap: var(--adaptive-22);
 		}
 	}
-	MY-S &__change-button {
+	// MY-S
+	&__change-button {
 		transition-duration: var(--transition);
 		&--size {
 			$fs: 14;
@@ -220,37 +221,39 @@
 			}
 		}
 	}
-	MY-F WP-S &__change-button {
-		&--size {
-			$fs: 14;
-			$lh: 17;
-			line-height: math.div($lh, $fs);
-			border: var(--adaptive-1) solid var(--light);
-			&:focus-visible {
-				box-shadow: var(--dark--light) 0 0 0 1px;
-			}
-		}
+	// MY-F
+	// WP-S &__change-button {
+	// 	&--size {
+	// 		$fs: 14;
+	// 		$lh: 17;
+	// 		line-height: math.div($lh, $fs);
+	// 		border: var(--adaptive-1) solid var(--light);
+	// 		&:focus-visible {
+	// 			box-shadow: var(--dark--light) 0 0 0 1px;
+	// 		}
+	// 	}
 
-		&--color {
-			width: var(--adaptive-22);
-			height: var(--adaptive-22);
-			background-color: var(--dark--light);
-			border-radius: 50%;
-			@media (hover: hover) {
-				&:hover {
-					transform: scale(1.2);
-				}
-			}
-			&:active,
-			&:focus-visible {
-				transform: scale(1.2);
-			}
-			&._active {
-				box-shadow: var(--light--dark) 0 0 0 3px, var(--dark--light) 0 0 0 4px;
-			}
-		}
-	}
-	WP-F &__price-information {
+	// 	&--color {
+	// 		width: var(--adaptive-22);
+	// 		height: var(--adaptive-22);
+	// 		background-color: var(--dark--light);
+	// 		border-radius: 50%;
+	// 		@media (hover: hover) {
+	// 			&:hover {
+	// 				transform: scale(1.2);
+	// 			}
+	// 		}
+	// 		&:active,
+	// 		&:focus-visible {
+	// 			transform: scale(1.2);
+	// 		}
+	// 		&._active {
+	// 			box-shadow: var(--light--dark) 0 0 0 3px, var(--dark--light) 0 0 0 4px;
+	// 		}
+	// 	}
+	// }
+	// WP-F
+	&__price-information {
 		display: flex;
 		column-gap: var(--adaptive-25);
 	}
@@ -301,7 +304,6 @@
 
 	&__video-wrapper {
 		@media (min-width: $md4+px) {
-			// margin-top: calc(0px - var(--adaptive-16));
 			margin-top: var(--adaptive-10);
 		}
 		@media (max-width: $md4+px) {
@@ -502,6 +504,9 @@
 		margin-bottom: var(--adaptive-10);
 		border-radius: 50%;
 		background: var(--dark--black);
+		&:not(.swiper-button-disabled):before {
+			color: var(--not-white);
+		}
 		&.swiper-button-disabled {
 			color: var(--dark--black);
 			background-color: #ffffff;
@@ -534,12 +539,16 @@
 }
 
 //WP classes
-ul.thwvs-wrapper-ul li.thwvs-wrapper-item-li {
-	transition-duration: var(--transition);
-	margin: 0;
-}
+// ul.thwvs-wrapper-ul li.thwvs-wrapper-item-li {
+// 	transition-duration: var(--transition);
+// 	margin: 0;
+// }
 
-.variations .reset_variations.thwvs-variation-link {
-	margin-top: 0;
-	margin-bottom: 0;
-}
+// .variations .reset_variations.thwvs-variation-link {
+// 	margin-top: 0;
+// 	margin-bottom: 0;
+// }
+
+// .thwvs-wrapper-ul .thwvs-wrapper-item-li.thwvs-color-li {
+// 	padding: 0;
+// }
